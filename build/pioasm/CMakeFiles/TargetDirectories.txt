@@ -1,0 +1,3 @@
+/Users/Nina/pico/doorPasswords/build/pioasm/CMakeFiles/pioasm.dir
+/Users/Nina/pico/doorPasswords/build/pioasm/CMakeFiles/edit_cache.dir
+/Users/Nina/pico/doorPasswords/build/pioasm/CMakeFiles/rebuild_cache.dir
