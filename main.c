@@ -90,7 +90,9 @@ int main()
     char *answer[size_pwd];
     char *getpwd;
 
-    // setAns(passwords, answer);
+    // not works yet
+    setAns(passwords, answer);
+
     while (true)
     {
         // IR receive
@@ -223,6 +225,7 @@ int main()
             x_pos = 5;
             y_pos = 8;
 
+            // clear answer and getpwd
             setAns(passwords, answer);
             getpwd = "";
             sleep_ms(100);
@@ -235,7 +238,7 @@ int main()
             x_pos = 5;
             y_pos = 8; */
 
-            // test
+            // when press test Botton
 
             int y = 8;
 
@@ -245,12 +248,14 @@ int main()
                 y += 8;
             }
 
-            /*  for (int i = 0; i < count_of(answer); i++)
-             {
-                 WriteString(buf, 5, y, answer[i]);
-                 y += 8;
-             } */
+            // still not works
+            for (int i = 0; i < count_of(answer); i++)
+            {
+                WriteString(buf, 5, y, answer[i]);
+                y += 8;
+            }
         }
+
         /*
        else if (rx_data == 0x07)
        {
