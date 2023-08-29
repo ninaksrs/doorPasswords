@@ -18,39 +18,16 @@
 
 #include "stepper_motor.h"
 #include "OLED.h"
-/* #include "basic_divices_gpio.h"
-#include "dc_motor.h"
-#include "buzzer_song.h" */
 
 #include "hardware/pwm.h"
 #include "hardware/gpio.h"
 #include "hardware/clocks.h"
 #include "hardware/adc.h"
 
-int check(char s[], char a[], char ch)
-{
-    int i;
-    for (i = 0; s[i] != '\0'; i++)
-    {
-        if (s[i] == ch)
-        {
-            a[i] = ch;
-        }
-        else if (s[i] == ' ')
-        {
-            a[i] = ' ';
-        }
-    }
-    // strcmp = 0 = equal.
-    if (strcmp(s, a) == 0)
-    {
-        return 1;
-    }
-    else
-    {
-        return 0;
-    }
-}
+void setAns(char *pwd[], char *ans[]);
+void pasteAns(char *pwd[], char *ans[], char *get);
+int check(char *pwd[], char *ans[]);
+
 void init_HW()
 {
     // I2C is "open drain", pull ups to keep signal high when no data is being
@@ -67,9 +44,6 @@ void init_HW()
 
 int main()
 {
-    /*  // BTN
-     const uint btn = 3;
-     uint countsound = 0; */
 
     // IR receive
     PIO pio = pio0;
@@ -109,26 +83,14 @@ int main()
     init_port(In4_pin, GPIO_OUT);
     sleep_ms(100);
 
-    // Init Devices
-    /*   init_soundSensor();
-      initialize_pwm_channel(GPIO_DC);
-      initBuzzer();
-      init_port(btn, GPIO_IN);
-      gpio_pull_up(btn); */
-
     // Create Passwords
-    char passwords[] = {"23"};
-    char answer[] = {0};
-    char getpwd;
-    int size_pwd = sizeof(answer) / sizeof(answer[0]);
+    char *passwords[] = {"23"};
+    int size_pwd = sizeof(passwords) / sizeof(passwords[0]);
 
-    // maybe for dc motor
-    /*  uint wrap;
-     wrap = set_frequency(261);
-     set_duty(0, wrap);
-     pwm_set_enabled(SLICE_NUM, false);
-     sleep_ms(100); */
+    char *answer[size_pwd];
+    char *getpwd;
 
+    // setAns(passwords, answer);
     while (true)
     {
         // IR receive
@@ -171,6 +133,10 @@ int main()
 
             x_pos = 5;
             y_pos = 8;
+
+            setAns(passwords, answer);
+            getpwd = " ";
+            sleep_ms(100);
         }
         else if (rx_data == 0x40)
         {
@@ -195,17 +161,17 @@ int main()
         }
         else if (rx_data == 0x18)
         {
-            getpwd += '2';
-
-            sleep_ms(100);
-
             WriteString(buf, x_pos, y_pos, "x"); // 2
             x_pos += 8;
+            getpwd = "2";
+            pasteAns(passwords, answer, getpwd);
         }
         else if (rx_data == 0x5e)
         {
             WriteString(buf, x_pos, y_pos, "x"); // 3
             x_pos += 8;
+            getpwd = "3";
+            pasteAns(passwords, answer, getpwd);
         }
         else if (rx_data == 0x08)
         {
@@ -239,34 +205,60 @@ int main()
         }
         else if (rx_data == 0x15)
         {
-            /* if (check(passwords, answer, getpwd) == 1)
+
+            if (check(passwords, answer) == 1)
             {
+                WriteString(buf, 5, 8, "                   ");
+                WriteString(buf, 5, 8, "  CHECKIN PWD"); // Play
                 onSMotor(1);
                 sleep_ms(3000);
                 offSMotor(1);
                 sleep_ms(200);
-            } */
-            WriteString(buf, 5, 8, "                   ");
-
-            WriteString(buf, 5, 8, "  CHECKIN PWD"); // Play
+            }
+            else
+            {
+                WriteString(buf, 5, 8, "                   ");
+                WriteString(buf, 5, 8, "   Wrong PWD   ");
+            }
             x_pos = 5;
             y_pos = 8;
+
+            setAns(passwords, answer);
+            getpwd = "";
+            sleep_ms(100);
         }
+
         else if (rx_data == 0x44)
         {
-            WriteString(buf, 5, 8, "                   ");
-            WriteString(buf, 5, 8, "    Welcome"); // 9
+            /* WriteString(buf, 5, 8, "                   ");
+            WriteString(buf, 5, 8, "    Welcome");
             x_pos = 5;
-            y_pos = 8;
+            y_pos = 8; */
+
+            // test
+
+            int y = 8;
+
+            for (int i = 0; i < count_of(passwords); i++)
+            {
+                WriteString(buf, 5, y, passwords[i]);
+                y += 8;
+            }
+
+            /*  for (int i = 0; i < count_of(answer); i++)
+             {
+                 WriteString(buf, 5, y, answer[i]);
+                 y += 8;
+             } */
         }
-        else if (rx_data == 0x07)
-        {
-            WriteString(buf, 5, 8, "                   ");
-            WriteString(buf, 5, 8, "   Wrong PWD   "); // 9
-            x_pos = 5;
-            y_pos = 8;
-        }
-        // mycode ....
+        /*
+       else if (rx_data == 0x07)
+       {
+           WriteString(buf, 5, 8, "                   ");
+           WriteString(buf, 5, 8, "   Wrong PWD   ");
+           x_pos = 5;
+           y_pos = 8;
+       }*/
 
         rx_data = 0;
         if (x_pos >= 120)
@@ -278,60 +270,39 @@ int main()
     return 0;
 }
 
-/* if (rx_data == 0x16)
+void setAns(char *pwd[], char *ans[])
+{
+    int i;
+    for (i = 0; *pwd[i] != '\0'; i++)
+    {
+        if (isalpha(*pwd[i]))
         {
-            WriteString(buf, x_pos, y_pos, "0");
-            x_pos += 8;
-            onSMotor(1);
+            ans[i] = ((char *)"x");
         }
-        else if (rx_data == 0x15)
+    }
+}
+
+void pasteAns(char *pwd[], char *ans[], char *get)
+{
+    int i;
+    for (i = 0; *pwd[i] != '\0'; i++)
+    {
+        if (*pwd[i] == *get)
         {
-            WriteString(buf, x_pos, y_pos, " ");
-            x_pos += 8;
+            *ans[i] = *get;
         }
-        else if (rx_data == 0x0c)
-        {
-            WriteString(buf, x_pos, y_pos, "1");
-            x_pos += 8;
-            offSMotor(1);
-        }
-        else if (rx_data == 0x18)
-        {
-            WriteString(buf, x_pos, y_pos, "2");
-            x_pos += 8;
-        }
-        else if (rx_data == 0x5e)
-        {
-            WriteString(buf, x_pos, y_pos, "3");
-            x_pos += 8;
-        }
-        else if (rx_data == 0x08)
-        {
-            WriteString(buf, x_pos, y_pos, "4");
-            x_pos += 8;
-        }
-        else if (rx_data == 0x1c)
-        {
-            WriteString(buf, x_pos, y_pos, "5");
-            x_pos += 8;
-        }
-        else if (rx_data == 0x5a)
-        {
-            WriteString(buf, x_pos, y_pos, "6");
-            x_pos += 8;
-        }
-        else if (rx_data == 0x42)
-        {
-            WriteString(buf, x_pos, y_pos, "7");
-            x_pos += 8;
-        }
-        else if (rx_data == 0x52)
-        {
-            WriteString(buf, x_pos, y_pos, "8");
-            x_pos += 8;
-        }
-        else if (rx_data == 0x4a)
-        {
-            WriteString(buf, x_pos, y_pos, "9");
-            x_pos += 8;
-        } */
+    }
+}
+
+int check(char *pwd[], char *ans[])
+{
+    // strcmp = 0 = equal.
+    if (strcmp(*pwd, *ans) == 0)
+    {
+        return 1;
+    }
+    else
+    {
+        return 0;
+    }
+}
