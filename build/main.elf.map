@@ -26,8 +26,6 @@ Archive member included to satisfy reference by file (symbol)
                               /Applications/ArmGNUToolchain/12.3.rel1/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libg.a(libc_a-callocr.o) (__errno)
 /Applications/ArmGNUToolchain/12.3.rel1/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libg.a(libc_a-sysconf.o)
                               /Applications/ArmGNUToolchain/12.3.rel1/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libg.a(libc_a-mallocr.o) (sysconf)
-/Applications/ArmGNUToolchain/12.3.rel1/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libg.a(libc_a-strcmp.o)
-                              CMakeFiles/main.dir/main.c.obj (strcmp)
 /Applications/ArmGNUToolchain/12.3.rel1/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libg.a(libc_a-init.o)
                               /Applications/ArmGNUToolchain/12.3.rel1/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/crt0.o (__libc_init_array)
 /Applications/ArmGNUToolchain/12.3.rel1/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libg.a(libc_a-lock.o)
@@ -92,6 +90,8 @@ Discarded input sections
  .bss           0x00000000        0x0 CMakeFiles/main.dir/main.c.obj
  .text.SSD1306_scroll
                 0x00000000       0x38 CMakeFiles/main.dir/main.c.obj
+ .text.get_input
+                0x00000000       0x80 CMakeFiles/main.dir/main.c.obj
  .rodata.In4_pin
                 0x00000000        0x4 CMakeFiles/main.dir/main.c.obj
  .rodata.In3_pin
@@ -2146,9 +2146,9 @@ Discarded input sections
  .debug_frame   0x00000000       0x20 CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/hardware_adc/adc.c.obj
  .ARM.attributes
                 0x00000000       0x2c CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/hardware_adc/adc.c.obj
- .text          0x00000000        0x0 /var/folders/4d/np5l_gk52g1gj0kk2fmsf50c0000gn/T//ccadHDg8.o
- .data          0x00000000        0x0 /var/folders/4d/np5l_gk52g1gj0kk2fmsf50c0000gn/T//ccadHDg8.o
- .bss           0x00000000        0x0 /var/folders/4d/np5l_gk52g1gj0kk2fmsf50c0000gn/T//ccadHDg8.o
+ .text          0x00000000        0x0 /var/folders/4d/np5l_gk52g1gj0kk2fmsf50c0000gn/T//ccAnRAgs.o
+ .data          0x00000000        0x0 /var/folders/4d/np5l_gk52g1gj0kk2fmsf50c0000gn/T//ccAnRAgs.o
+ .bss           0x00000000        0x0 /var/folders/4d/np5l_gk52g1gj0kk2fmsf50c0000gn/T//ccAnRAgs.o
  .data          0x00000000        0x0 /Applications/ArmGNUToolchain/12.3.rel1/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/12.3.1/thumb/v6-m/nofp/libgcc.a(_dvmd_tls.o)
  .bss           0x00000000        0x0 /Applications/ArmGNUToolchain/12.3.rel1/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/12.3.1/thumb/v6-m/nofp/libgcc.a(_dvmd_tls.o)
  .text          0x00000000        0x0 /Applications/ArmGNUToolchain/12.3.rel1/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libg.a(libc_a-calloc.o)
@@ -2209,8 +2209,6 @@ Discarded input sections
  .text          0x00000000        0x0 /Applications/ArmGNUToolchain/12.3.rel1/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libg.a(libc_a-sysconf.o)
  .data          0x00000000        0x0 /Applications/ArmGNUToolchain/12.3.rel1/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libg.a(libc_a-sysconf.o)
  .bss           0x00000000        0x0 /Applications/ArmGNUToolchain/12.3.rel1/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libg.a(libc_a-sysconf.o)
- .data          0x00000000        0x0 /Applications/ArmGNUToolchain/12.3.rel1/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libg.a(libc_a-strcmp.o)
- .bss           0x00000000        0x0 /Applications/ArmGNUToolchain/12.3.rel1/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libg.a(libc_a-strcmp.o)
  .text          0x00000000        0x0 /Applications/ArmGNUToolchain/12.3.rel1/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libg.a(libc_a-init.o)
  .data          0x00000000        0x0 /Applications/ArmGNUToolchain/12.3.rel1/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libg.a(libc_a-init.o)
  .bss           0x00000000        0x0 /Applications/ArmGNUToolchain/12.3.rel1/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libg.a(libc_a-init.o)
@@ -2402,11 +2400,11 @@ LOAD /Applications/ArmGNUToolchain/12.3.rel1/arm-none-eabi/bin/../lib/gcc/arm-no
 .boot2          0x10000000      0x100
                 0x10000000                        __boot2_start__ = .
  *(.boot2)
- .boot2         0x10000000      0x100 /var/folders/4d/np5l_gk52g1gj0kk2fmsf50c0000gn/T//ccadHDg8.o
+ .boot2         0x10000000      0x100 /var/folders/4d/np5l_gk52g1gj0kk2fmsf50c0000gn/T//ccAnRAgs.o
                 0x10000100                        __boot2_end__ = .
                 0x00000001                        ASSERT (((__boot2_end__ - __boot2_start__) == 0x100), ERROR: Pico second stage bootloader must be 256 bytes in size)
 
-.text           0x10000100     0x5b30
+.text           0x10000100     0x5ab8
                 0x10000100                        __logical_binary_start = .
  *(.vectors)
  .vectors       0x10000100       0xd4 CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/pico_standard_link/crt0.S.obj
@@ -2514,549 +2512,546 @@ LOAD /Applications/ArmGNUToolchain/12.3.rel1/arm-none-eabi/bin/../lib/gcc/arm-no
  *fill*         0x100006d2        0x2 
  .text.init_HW  0x100006d4       0x3c CMakeFiles/main.dir/main.c.obj
                 0x100006d4                init_HW
- .text.setAns   0x10000710       0x2c CMakeFiles/main.dir/main.c.obj
-                0x10000710                setAns
- .text.pasteAns
-                0x1000073c       0x20 CMakeFiles/main.dir/main.c.obj
-                0x1000073c                pasteAns
- .text.check    0x1000075c       0x16 CMakeFiles/main.dir/main.c.obj
-                0x1000075c                check
- *fill*         0x10000772        0x2 
- .text.main     0x10000774      0x380 CMakeFiles/main.dir/main.c.obj
-                0x10000774                main
+ .text.Trs_KeyV
+                0x10000710      0x150 CMakeFiles/main.dir/main.c.obj
+                0x10000710                Trs_KeyV
+ .text.check_input
+                0x10000860       0x1e CMakeFiles/main.dir/main.c.obj
+                0x10000860                check_input
+ *fill*         0x1000087e        0x2 
+ .text.main     0x10000880      0x284 CMakeFiles/main.dir/main.c.obj
+                0x10000880                main
  .text.sm_config_set_clkdiv
-                0x10000af4       0x3c CMakeFiles/main.dir/nec_receive.c.obj
+                0x10000b04       0x3c CMakeFiles/main.dir/nec_receive.c.obj
  .text.pio_get_default_sm_config
-                0x10000b30       0x28 CMakeFiles/main.dir/nec_receive.c.obj
+                0x10000b40       0x28 CMakeFiles/main.dir/nec_receive.c.obj
  .text.nec_receive_program_get_default_config
-                0x10000b58       0x28 CMakeFiles/main.dir/nec_receive.c.obj
+                0x10000b68       0x28 CMakeFiles/main.dir/nec_receive.c.obj
  .text.nec_receive_program_init
-                0x10000b80       0xc0 CMakeFiles/main.dir/nec_receive.c.obj
+                0x10000b90       0xc0 CMakeFiles/main.dir/nec_receive.c.obj
  .text.nec_rx_init
-                0x10000c40       0x50 CMakeFiles/main.dir/nec_receive.c.obj
-                0x10000c40                nec_rx_init
+                0x10000c50       0x50 CMakeFiles/main.dir/nec_receive.c.obj
+                0x10000c50                nec_rx_init
  .text.nec_decode_frame
-                0x10000c90       0x2e CMakeFiles/main.dir/nec_receive.c.obj
-                0x10000c90                nec_decode_frame
- *fill*         0x10000cbe        0x2 
+                0x10000ca0       0x2e CMakeFiles/main.dir/nec_receive.c.obj
+                0x10000ca0                nec_decode_frame
+ *fill*         0x10000cce        0x2 
  .text.gpio_set_function
-                0x10000cc0       0x30 CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/hardware_gpio/gpio.c.obj
-                0x10000cc0                gpio_set_function
+                0x10000cd0       0x30 CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/hardware_gpio/gpio.c.obj
+                0x10000cd0                gpio_set_function
  .text.gpio_set_pulls
-                0x10000cf0       0x34 CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/hardware_gpio/gpio.c.obj
-                0x10000cf0                gpio_set_pulls
+                0x10000d00       0x34 CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/hardware_gpio/gpio.c.obj
+                0x10000d00                gpio_set_pulls
  .text.gpio_init
-                0x10000d24       0x16 CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/hardware_gpio/gpio.c.obj
-                0x10000d24                gpio_init
- *fill*         0x10000d3a        0x2 
+                0x10000d34       0x16 CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/hardware_gpio/gpio.c.obj
+                0x10000d34                gpio_init
+ *fill*         0x10000d4a        0x2 
  .text.running_on_fpga
-                0x10000d3c       0x14 CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/pico_platform/platform.c.obj
-                0x10000d3c                running_on_fpga
+                0x10000d4c       0x14 CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/pico_platform/platform.c.obj
+                0x10000d4c                running_on_fpga
  .text.hw_claim_lock
-                0x10000d50       0x18 CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/hardware_claim/claim.c.obj
-                0x10000d50                hw_claim_lock
+                0x10000d60       0x18 CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/hardware_claim/claim.c.obj
+                0x10000d60                hw_claim_lock
  .text.hw_claim_unlock
-                0x10000d68       0x14 CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/hardware_claim/claim.c.obj
-                0x10000d68                hw_claim_unlock
+                0x10000d78       0x14 CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/hardware_claim/claim.c.obj
+                0x10000d78                hw_claim_unlock
  .text.hw_claim_or_assert
-                0x10000d7c       0x32 CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/hardware_claim/claim.c.obj
-                0x10000d7c                hw_claim_or_assert
+                0x10000d8c       0x32 CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/hardware_claim/claim.c.obj
+                0x10000d8c                hw_claim_or_assert
  .text.hw_claim_unused_from_range
-                0x10000dae       0x50 CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/hardware_claim/claim.c.obj
-                0x10000dae                hw_claim_unused_from_range
- *fill*         0x10000dfe        0x2 
+                0x10000dbe       0x50 CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/hardware_claim/claim.c.obj
+                0x10000dbe                hw_claim_unused_from_range
+ *fill*         0x10000e0e        0x2 
  .text.spin_locks_reset
-                0x10000e00       0x20 CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/hardware_sync/sync.c.obj
-                0x10000e00                spin_locks_reset
+                0x10000e10       0x20 CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/hardware_sync/sync.c.obj
+                0x10000e10                spin_locks_reset
  .text.next_striped_spin_lock_num
-                0x10000e20       0x1c CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/hardware_sync/sync.c.obj
-                0x10000e20                next_striped_spin_lock_num
+                0x10000e30       0x1c CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/hardware_sync/sync.c.obj
+                0x10000e30                next_striped_spin_lock_num
  .text.set_raw_irq_handler_and_unlock
-                0x10000e3c       0x28 CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/hardware_irq/irq.c.obj
+                0x10000e4c       0x28 CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/hardware_irq/irq.c.obj
  .text.resolve_branch
-                0x10000e64       0x30 CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/hardware_irq/irq.c.obj
+                0x10000e74       0x30 CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/hardware_irq/irq.c.obj
  .text.make_branch
-                0x10000e94       0x48 CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/hardware_irq/irq.c.obj
+                0x10000ea4       0x48 CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/hardware_irq/irq.c.obj
  .text.insert_branch_and_link
-                0x10000edc       0x40 CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/hardware_irq/irq.c.obj
+                0x10000eec       0x40 CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/hardware_irq/irq.c.obj
  .text.irq_is_enabled
-                0x10000f1c       0x18 CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/hardware_irq/irq.c.obj
-                0x10000f1c                irq_is_enabled
+                0x10000f2c       0x18 CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/hardware_irq/irq.c.obj
+                0x10000f2c                irq_is_enabled
  .text.irq_set_mask_enabled
-                0x10000f34       0x20 CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/hardware_irq/irq.c.obj
-                0x10000f34                irq_set_mask_enabled
+                0x10000f44       0x20 CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/hardware_irq/irq.c.obj
+                0x10000f44                irq_set_mask_enabled
  .text.irq_set_enabled
-                0x10000f54        0xe CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/hardware_irq/irq.c.obj
-                0x10000f54                irq_set_enabled
- *fill*         0x10000f62        0x2 
+                0x10000f64        0xe CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/hardware_irq/irq.c.obj
+                0x10000f64                irq_set_enabled
+ *fill*         0x10000f72        0x2 
  .text.irq_get_vtable_handler
-                0x10000f64       0x10 CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/hardware_irq/irq.c.obj
-                0x10000f64                irq_get_vtable_handler
+                0x10000f74       0x10 CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/hardware_irq/irq.c.obj
+                0x10000f74                irq_get_vtable_handler
  .text.irq_set_exclusive_handler
-                0x10000f74       0x54 CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/hardware_irq/irq.c.obj
-                0x10000f74                irq_set_exclusive_handler
+                0x10000f84       0x54 CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/hardware_irq/irq.c.obj
+                0x10000f84                irq_set_exclusive_handler
  .text.irq_remove_handler
-                0x10000fc8      0x188 CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/hardware_irq/irq.c.obj
-                0x10000fc8                irq_remove_handler
+                0x10000fd8      0x188 CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/hardware_irq/irq.c.obj
+                0x10000fd8                irq_remove_handler
  .text.irq_add_tail_to_free_list
-                0x10001150       0xf0 CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/hardware_irq/irq.c.obj
-                0x10001150                irq_add_tail_to_free_list
+                0x10001160       0xf0 CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/hardware_irq/irq.c.obj
+                0x10001160                irq_add_tail_to_free_list
  .text.irq_init_priorities
-                0x10001240       0x1c CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/hardware_irq/irq.c.obj
-                0x10001240                irq_init_priorities
+                0x10001250       0x1c CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/hardware_irq/irq.c.obj
+                0x10001250                irq_init_priorities
  .text.lock_init
-                0x1000125c       0x10 CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/common/pico_sync/lock_core.c.obj
-                0x1000125c                lock_init
+                0x1000126c       0x10 CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/common/pico_sync/lock_core.c.obj
+                0x1000126c                lock_init
  .text.mutex_init
-                0x1000126c       0x1a CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/common/pico_sync/mutex.c.obj
-                0x1000126c                mutex_init
+                0x1000127c       0x1a CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/common/pico_sync/mutex.c.obj
+                0x1000127c                mutex_init
  .text.recursive_mutex_init
-                0x10001286       0x1e CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/common/pico_sync/mutex.c.obj
-                0x10001286                recursive_mutex_init
+                0x10001296       0x1e CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/common/pico_sync/mutex.c.obj
+                0x10001296                recursive_mutex_init
  .text.time_reached
-                0x100012a4       0x28 CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/common/pico_time/time.c.obj
+                0x100012b4       0x28 CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/common/pico_time/time.c.obj
  .text.get_entry
-                0x100012cc       0x38 CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/common/pico_time/time.c.obj
+                0x100012dc       0x38 CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/common/pico_time/time.c.obj
  .text.timer_pool_entry_comparator
-                0x10001304       0x2e CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/common/pico_time/time.c.obj
-                0x10001304                timer_pool_entry_comparator
- *fill*         0x10001332        0x2 
+                0x10001314       0x2e CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/common/pico_time/time.c.obj
+                0x10001314                timer_pool_entry_comparator
+ *fill*         0x10001342        0x2 
  .text.update_us_since_boot
-                0x10001334       0x24 CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/common/pico_time/time.c.obj
+                0x10001344       0x24 CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/common/pico_time/time.c.obj
  .text.delayed_by_us
-                0x10001358       0x34 CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/common/pico_time/time.c.obj
+                0x10001368       0x34 CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/common/pico_time/time.c.obj
  .text.ph_get_node
-                0x1000138c       0x30 CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/common/pico_time/time.c.obj
+                0x1000139c       0x30 CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/common/pico_time/time.c.obj
  .text.ph_contains_node
-                0x100013bc       0x1e CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/common/pico_time/time.c.obj
+                0x100013cc       0x1e CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/common/pico_time/time.c.obj
  .text.ph_new_node
-                0x100013da       0x28 CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/common/pico_time/time.c.obj
- *fill*         0x10001402        0x2 
+                0x100013ea       0x28 CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/common/pico_time/time.c.obj
+ *fill*         0x10001412        0x2 
  .text.ph_add_child_node
-                0x10001404       0x6c CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/common/pico_time/time.c.obj
+                0x10001414       0x6c CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/common/pico_time/time.c.obj
  .text.ph_merge_nodes
-                0x10001470       0x3e CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/common/pico_time/time.c.obj
- *fill*         0x100014ae        0x2 
+                0x10001480       0x3e CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/common/pico_time/time.c.obj
+ *fill*         0x100014be        0x2 
  .text.ph_insert_node
-                0x100014b0       0x3c CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/common/pico_time/time.c.obj
+                0x100014c0       0x3c CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/common/pico_time/time.c.obj
  .text.ph_free_node
-                0x100014ec       0x5c CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/common/pico_time/time.c.obj
+                0x100014fc       0x5c CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/common/pico_time/time.c.obj
  .text.get_entry_id_high
-                0x10001548       0x30 CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/common/pico_time/time.c.obj
+                0x10001558       0x30 CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/common/pico_time/time.c.obj
  .text.alarm_pool_post_alloc_init
-                0x10001578       0x40 CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/common/pico_time/time.c.obj
+                0x10001588       0x40 CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/common/pico_time/time.c.obj
  .text.sleep_until_callback
-                0x100015b8       0x30 CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/common/pico_time/time.c.obj
+                0x100015c8       0x30 CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/common/pico_time/time.c.obj
  .text.get_absolute_time
-                0x100015e8       0x22 CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/common/pico_time/time.c.obj
+                0x100015f8       0x22 CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/common/pico_time/time.c.obj
  .text.make_timeout_time_us
-                0x1000160a       0x24 CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/common/pico_time/time.c.obj
- *fill*         0x1000162e        0x2 
+                0x1000161a       0x24 CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/common/pico_time/time.c.obj
+ *fill*         0x1000163e        0x2 
  .text.add_alarm_under_lock
-                0x10001630       0x94 CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/common/pico_time/time.c.obj
+                0x10001640       0x94 CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/common/pico_time/time.c.obj
  .text.alarm_pool_alarm_callback
-                0x100016c4      0x210 CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/common/pico_time/time.c.obj
+                0x100016d4      0x210 CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/common/pico_time/time.c.obj
  .text.alarm_pool_init_default
-                0x100018d4       0x40 CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/common/pico_time/time.c.obj
-                0x100018d4                alarm_pool_init_default
+                0x100018e4       0x40 CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/common/pico_time/time.c.obj
+                0x100018e4                alarm_pool_init_default
  .text.alarm_pool_get_default
-                0x10001914       0x2c CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/common/pico_time/time.c.obj
-                0x10001914                alarm_pool_get_default
+                0x10001924       0x2c CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/common/pico_time/time.c.obj
+                0x10001924                alarm_pool_get_default
  .text.alarm_pool_add_alarm_at
-                0x10001940      0x10e CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/common/pico_time/time.c.obj
-                0x10001940                alarm_pool_add_alarm_at
+                0x10001950      0x10e CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/common/pico_time/time.c.obj
+                0x10001950                alarm_pool_add_alarm_at
  .text.add_alarm_at
-                0x10001a4e       0x2e CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/common/pico_time/time.c.obj
+                0x10001a5e       0x2e CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/common/pico_time/time.c.obj
  .text.alarm_pool_cancel_alarm
-                0x10001a7c       0xa8 CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/common/pico_time/time.c.obj
-                0x10001a7c                alarm_pool_cancel_alarm
+                0x10001a8c       0xa8 CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/common/pico_time/time.c.obj
+                0x10001a8c                alarm_pool_cancel_alarm
  .text.cancel_alarm
-                0x10001b24       0x10 CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/common/pico_time/time.c.obj
+                0x10001b34       0x10 CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/common/pico_time/time.c.obj
  .text.sleep_until
-                0x10001b34       0xb0 CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/common/pico_time/time.c.obj
-                0x10001b34                sleep_until
+                0x10001b44       0xb0 CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/common/pico_time/time.c.obj
+                0x10001b44                sleep_until
  .text.sleep_us
-                0x10001be4       0x1a CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/common/pico_time/time.c.obj
-                0x10001be4                sleep_us
+                0x10001bf4       0x1a CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/common/pico_time/time.c.obj
+                0x10001bf4                sleep_us
  .text.sleep_ms
-                0x10001bfe       0x14 CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/common/pico_time/time.c.obj
-                0x10001bfe                sleep_ms
- *fill*         0x10001c12        0x2 
+                0x10001c0e       0x14 CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/common/pico_time/time.c.obj
+                0x10001c0e                sleep_ms
+ *fill*         0x10001c22        0x2 
  .text.best_effort_wfe_or_timeout
-                0x10001c14       0x44 CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/common/pico_time/time.c.obj
-                0x10001c14                best_effort_wfe_or_timeout
+                0x10001c24       0x44 CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/common/pico_time/time.c.obj
+                0x10001c24                best_effort_wfe_or_timeout
  .text.hardware_alarm_irq_handler
-                0x10001c58       0x8c CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/hardware_timer/timer.c.obj
+                0x10001c68       0x8c CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/hardware_timer/timer.c.obj
  .text.hardware_alarm_claim
-                0x10001ce4       0x18 CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/hardware_timer/timer.c.obj
-                0x10001ce4                hardware_alarm_claim
+                0x10001cf4       0x18 CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/hardware_timer/timer.c.obj
+                0x10001cf4                hardware_alarm_claim
  .text.time_us_64
-                0x10001cfc       0x18 CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/hardware_timer/timer.c.obj
-                0x10001cfc                time_us_64
+                0x10001d0c       0x18 CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/hardware_timer/timer.c.obj
+                0x10001d0c                time_us_64
  .text.busy_wait_until
-                0x10001d14       0x28 CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/hardware_timer/timer.c.obj
-                0x10001d14                busy_wait_until
+                0x10001d24       0x28 CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/hardware_timer/timer.c.obj
+                0x10001d24                busy_wait_until
  .text.hardware_alarm_set_callback
-                0x10001d3c       0x90 CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/hardware_timer/timer.c.obj
-                0x10001d3c                hardware_alarm_set_callback
+                0x10001d4c       0x90 CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/hardware_timer/timer.c.obj
+                0x10001d4c                hardware_alarm_set_callback
  .text.hardware_alarm_set_target
-                0x10001dcc       0xe8 CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/hardware_timer/timer.c.obj
-                0x10001dcc                hardware_alarm_set_target
+                0x10001ddc       0xe8 CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/hardware_timer/timer.c.obj
+                0x10001ddc                hardware_alarm_set_target
  .text.hardware_alarm_cancel
-                0x10001eb4       0x40 CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/hardware_timer/timer.c.obj
-                0x10001eb4                hardware_alarm_cancel
+                0x10001ec4       0x40 CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/hardware_timer/timer.c.obj
+                0x10001ec4                hardware_alarm_cancel
  .text.ph_get_node
-                0x10001ef4       0x30 CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/common/pico_util/pheap.c.obj
+                0x10001f04       0x30 CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/common/pico_util/pheap.c.obj
  .text.ph_add_child_node
-                0x10001f24       0x6c CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/common/pico_util/pheap.c.obj
+                0x10001f34       0x6c CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/common/pico_util/pheap.c.obj
  .text.ph_merge_nodes
-                0x10001f90       0x3e CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/common/pico_util/pheap.c.obj
+                0x10001fa0       0x3e CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/common/pico_util/pheap.c.obj
  .text.ph_clear
-                0x10001fce       0x34 CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/common/pico_util/pheap.c.obj
-                0x10001fce                ph_clear
+                0x10001fde       0x34 CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/common/pico_util/pheap.c.obj
+                0x10001fde                ph_clear
  .text.ph_post_alloc_init
-                0x10002002        0xe CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/common/pico_util/pheap.c.obj
-                0x10002002                ph_post_alloc_init
+                0x10002012        0xe CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/common/pico_util/pheap.c.obj
+                0x10002012                ph_post_alloc_init
  .text.ph_merge_two_pass
-                0x10002010       0x5c CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/common/pico_util/pheap.c.obj
-                0x10002010                ph_merge_two_pass
+                0x10002020       0x5c CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/common/pico_util/pheap.c.obj
+                0x10002020                ph_merge_two_pass
  .text.ph_remove_any_head
-                0x1000206c       0xc0 CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/common/pico_util/pheap.c.obj
+                0x1000207c       0xc0 CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/common/pico_util/pheap.c.obj
  .text.ph_remove_head
-                0x1000212c       0x14 CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/common/pico_util/pheap.c.obj
-                0x1000212c                ph_remove_head
+                0x1000213c       0x14 CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/common/pico_util/pheap.c.obj
+                0x1000213c                ph_remove_head
  .text.ph_remove_and_free_node
-                0x10002140       0xa0 CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/common/pico_util/pheap.c.obj
-                0x10002140                ph_remove_and_free_node
+                0x10002150       0xa0 CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/common/pico_util/pheap.c.obj
+                0x10002150                ph_remove_and_free_node
  .text.clock_configure
-                0x100021e0      0x108 CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/hardware_clocks/clocks.c.obj
-                0x100021e0                clock_configure
+                0x100021f0      0x108 CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/hardware_clocks/clocks.c.obj
+                0x100021f0                clock_configure
  .text.clocks_init
-                0x100022e8      0x100 CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/hardware_clocks/clocks.c.obj
-                0x100022e8                clocks_init
+                0x100022f8      0x100 CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/hardware_clocks/clocks.c.obj
+                0x100022f8                clocks_init
  .text.clock_get_hz
-                0x100023e8        0xc CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/hardware_clocks/clocks.c.obj
-                0x100023e8                clock_get_hz
+                0x100023f8        0xc CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/hardware_clocks/clocks.c.obj
+                0x100023f8                clock_get_hz
  .text.pll_init
-                0x100023f4      0x120 CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/hardware_pll/pll.c.obj
-                0x100023f4                pll_init
+                0x10002404      0x120 CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/hardware_pll/pll.c.obj
+                0x10002404                pll_init
  .text.watchdog_start_tick
-                0x10002514       0x10 CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/hardware_watchdog/watchdog.c.obj
-                0x10002514                watchdog_start_tick
+                0x10002524       0x10 CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/hardware_watchdog/watchdog.c.obj
+                0x10002524                watchdog_start_tick
  .text.xosc_init
-                0x10002524       0x28 CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/hardware_xosc/xosc.c.obj
-                0x10002524                xosc_init
- .text._exit    0x1000254c        0x4 CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/pico_runtime/runtime.c.obj
-                0x1000254c                _exit
- .text._sbrk    0x10002550       0x38 CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/pico_runtime/runtime.c.obj
-                0x10002550                _sbrk
- .text.exit     0x10002588        0x6 CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/pico_runtime/runtime.c.obj
-                0x10002588                exit
- *fill*         0x1000258e        0x2 
+                0x10002534       0x28 CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/hardware_xosc/xosc.c.obj
+                0x10002534                xosc_init
+ .text._exit    0x1000255c        0x4 CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/pico_runtime/runtime.c.obj
+                0x1000255c                _exit
+ .text._sbrk    0x10002560       0x38 CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/pico_runtime/runtime.c.obj
+                0x10002560                _sbrk
+ .text.exit     0x10002598        0x6 CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/pico_runtime/runtime.c.obj
+                0x10002598                exit
+ *fill*         0x1000259e        0x2 
  .text.__assert_func
-                0x10002590       0x38 CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/pico_runtime/runtime.c.obj
-                0x10002590                __assert_func
+                0x100025a0       0x38 CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/pico_runtime/runtime.c.obj
+                0x100025a0                __assert_func
  .text.runtime_init
-                0x100025c8       0xf8 CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/pico_runtime/runtime.c.obj
-                0x100025c8                runtime_init
- .text.panic    0x100026c0       0x30 CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/pico_runtime/runtime.c.obj
-                0x100026c0                panic
+                0x100025d8       0xf8 CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/pico_runtime/runtime.c.obj
+                0x100025d8                runtime_init
+ .text.panic    0x100026d0       0x30 CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/pico_runtime/runtime.c.obj
+                0x100026d0                panic
  .text._out_null
-                0x100026f0        0x2 CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/pico_printf/printf.c.obj
+                0x10002700        0x2 CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/pico_printf/printf.c.obj
  .text._out_fct
-                0x100026f2        0xe CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/pico_printf/printf.c.obj
- .text._atoi    0x10002700       0x24 CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/pico_printf/printf.c.obj
+                0x10002702        0xe CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/pico_printf/printf.c.obj
+ .text._atoi    0x10002710       0x24 CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/pico_printf/printf.c.obj
  .text._out_rev
-                0x10002724       0xae CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/pico_printf/printf.c.obj
+                0x10002734       0xae CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/pico_printf/printf.c.obj
  .text._ntoa_format
-                0x100027d2      0x110 CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/pico_printf/printf.c.obj
+                0x100027e2      0x110 CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/pico_printf/printf.c.obj
  .text._ntoa_long
-                0x100028e2       0xbc CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/pico_printf/printf.c.obj
+                0x100028f2       0xbc CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/pico_printf/printf.c.obj
  .text._ntoa_long_long
-                0x1000299e      0x10e CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/pico_printf/printf.c.obj
- .text._etoa    0x10002aac      0x420 CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/pico_printf/printf.c.obj
- .text._ftoa    0x10002ecc      0x354 CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/pico_printf/printf.c.obj
+                0x100029ae      0x10e CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/pico_printf/printf.c.obj
+ .text._etoa    0x10002abc      0x420 CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/pico_printf/printf.c.obj
+ .text._ftoa    0x10002edc      0x354 CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/pico_printf/printf.c.obj
  .text._vsnprintf
-                0x10003220      0x65c CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/pico_printf/printf.c.obj
+                0x10003230      0x65c CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/pico_printf/printf.c.obj
  .text.vfctprintf
-                0x1000387c       0x20 CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/pico_printf/printf.c.obj
-                0x1000387c                vfctprintf
- .text          0x1000389c       0x10 CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/pico_bit_ops/bit_ops_aeabi.S.obj
+                0x1000388c       0x20 CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/pico_printf/printf.c.obj
+                0x1000388c                vfctprintf
+ .text          0x100038ac       0x10 CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/pico_bit_ops/bit_ops_aeabi.S.obj
  .text.rom_func_lookup
-                0x100038ac       0x10 CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/pico_bootrom/bootrom.c.obj
-                0x100038ac                rom_func_lookup
- .text.rom_data_lookup
                 0x100038bc       0x10 CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/pico_bootrom/bootrom.c.obj
-                0x100038bc                rom_data_lookup
+                0x100038bc                rom_func_lookup
+ .text.rom_data_lookup
+                0x100038cc       0x10 CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/pico_bootrom/bootrom.c.obj
+                0x100038cc                rom_data_lookup
  .text.rom_funcs_lookup
-                0x100038cc       0x36 CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/pico_bootrom/bootrom.c.obj
-                0x100038cc                rom_funcs_lookup
- *fill*         0x10003902        0x2 
+                0x100038dc       0x36 CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/pico_bootrom/bootrom.c.obj
+                0x100038dc                rom_funcs_lookup
+ *fill*         0x10003912        0x2 
  .text.__wrap___aeabi_idiv
-                0x10003904       0x50 CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/pico_divider/divider.S.obj
-                0x10003904                __wrap___aeabi_idivmod
-                0x10003904                divmod_s32s32
-                0x10003904                div_s32s32
-                0x10003904                __wrap___aeabi_idiv
-                0x1000390c                divmod_s32s32_unsafe
-                0x10003938                divmod_s32s32_savestate
+                0x10003914       0x50 CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/pico_divider/divider.S.obj
+                0x10003914                __wrap___aeabi_idivmod
+                0x10003914                divmod_s32s32
+                0x10003914                div_s32s32
+                0x10003914                __wrap___aeabi_idiv
+                0x1000391c                divmod_s32s32_unsafe
+                0x10003948                divmod_s32s32_savestate
  .text.__wrap___aeabi_uidiv
-                0x10003954       0x4c CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/pico_divider/divider.S.obj
-                0x10003954                __wrap___aeabi_uidiv
-                0x10003954                __wrap___aeabi_uidivmod
-                0x10003954                div_u32u32
-                0x10003954                divmod_u32u32
-                0x1000395c                divmod_u32u32_unsafe
-                0x10003984                divmod_u32u32_savestate
+                0x10003964       0x4c CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/pico_divider/divider.S.obj
+                0x10003964                __wrap___aeabi_uidiv
+                0x10003964                __wrap___aeabi_uidivmod
+                0x10003964                div_u32u32
+                0x10003964                divmod_u32u32
+                0x1000396c                divmod_u32u32_unsafe
+                0x10003994                divmod_u32u32_savestate
  .text.__wrap___aeabi_ldiv
-                0x100039a0      0x424 CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/pico_divider/divider.S.obj
-                0x100039a0                __wrap___aeabi_ldivmod
-                0x100039a0                div_s64s64
-                0x100039a0                divmod_s64s64
-                0x100039d0                divmod_u64u64
-                0x100039d0                div_u64u64
-                0x100039d0                __wrap___aeabi_uldivmod
-                0x100039e0                divmod_u64u64_savestate
-                0x10003a00                divmod_s64s64_unsafe
-                0x10003a88                divmod_u64u64_unsafe
+                0x100039b0      0x424 CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/pico_divider/divider.S.obj
+                0x100039b0                __wrap___aeabi_ldivmod
+                0x100039b0                div_s64s64
+                0x100039b0                divmod_s64s64
+                0x100039e0                divmod_u64u64
+                0x100039e0                div_u64u64
+                0x100039e0                __wrap___aeabi_uldivmod
+                0x100039f0                divmod_u64u64_savestate
+                0x10003a10                divmod_s64s64_unsafe
+                0x10003a98                divmod_u64u64_unsafe
  .text.__wrap___aeabi_darithmetic
-                0x10003dc4       0x80 CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/pico_double/double_aeabi.S.obj
-                0x10003dc4                __wrap___aeabi_drsub
-                0x10003dca                __wrap___aeabi_dsub
-                0x10003ddc                __wrap___aeabi_dadd
-                0x10003dee                __wrap___aeabi_ddiv
-                0x10003e2a                __wrap___aeabi_dmul
+                0x10003dd4       0x80 CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/pico_double/double_aeabi.S.obj
+                0x10003dd4                __wrap___aeabi_drsub
+                0x10003dda                __wrap___aeabi_dsub
+                0x10003dec                __wrap___aeabi_dadd
+                0x10003dfe                __wrap___aeabi_ddiv
+                0x10003e3a                __wrap___aeabi_dmul
  .text.__wrap___aeabi_cdcmple
-                0x10003e44       0x6c CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/pico_double/double_aeabi.S.obj
-                0x10003e44                __wrap___aeabi_cdrcmple
-                0x10003e54                __wrap___aeabi_cdcmple
-                0x10003e54                __wrap___aeabi_cdcmpeq
+                0x10003e54       0x6c CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/pico_double/double_aeabi.S.obj
+                0x10003e54                __wrap___aeabi_cdrcmple
+                0x10003e64                __wrap___aeabi_cdcmple
+                0x10003e64                __wrap___aeabi_cdcmpeq
  .text.__wrap___aeabi_dcmplt
-                0x10003eb0        0xc CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/pico_double/double_aeabi.S.obj
-                0x10003eb0                __wrap___aeabi_dcmplt
+                0x10003ec0        0xc CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/pico_double/double_aeabi.S.obj
+                0x10003ec0                __wrap___aeabi_dcmplt
  .text.__wrap___aeabi_dcmple
-                0x10003ebc       0x10 CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/pico_double/double_aeabi.S.obj
-                0x10003ebc                __wrap___aeabi_dcmple
- .text.__wrap___aeabi_dcmpge
                 0x10003ecc       0x10 CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/pico_double/double_aeabi.S.obj
-                0x10003ecc                __wrap___aeabi_dcmpge
+                0x10003ecc                __wrap___aeabi_dcmple
+ .text.__wrap___aeabi_dcmpge
+                0x10003edc       0x10 CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/pico_double/double_aeabi.S.obj
+                0x10003edc                __wrap___aeabi_dcmpge
  .text.__wrap___aeabi_dcmpgt
-                0x10003edc        0xa CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/pico_double/double_aeabi.S.obj
-                0x10003edc                __wrap___aeabi_dcmpgt
+                0x10003eec        0xa CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/pico_double/double_aeabi.S.obj
+                0x10003eec                __wrap___aeabi_dcmpgt
  .text.__wrap___aeabi_dcmpun
-                0x10003ee6       0x1c CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/pico_double/double_aeabi.S.obj
-                0x10003ee6                __wrap___aeabi_dcmpun
- *fill*         0x10003f02        0x2 
+                0x10003ef6       0x1c CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/pico_double/double_aeabi.S.obj
+                0x10003ef6                __wrap___aeabi_dcmpun
+ *fill*         0x10003f12        0x2 
  .text.__wrap___aeabi_i2d
-                0x10003f04       0x38 CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/pico_double/double_aeabi.S.obj
-                0x10003f04                __wrap___aeabi_ui2d
-                0x10003f0c                __wrap___aeabi_i2d
+                0x10003f14       0x38 CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/pico_double/double_aeabi.S.obj
+                0x10003f14                __wrap___aeabi_ui2d
+                0x10003f1c                __wrap___aeabi_i2d
  .text.__wrap___aeabi_d2iz
-                0x10003f3c       0x48 CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/pico_double/double_aeabi.S.obj
-                0x10003f3c                __wrap___aeabi_d2iz
-                0x10003f3c                double2int_z
+                0x10003f4c       0x48 CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/pico_double/double_aeabi.S.obj
+                0x10003f4c                __wrap___aeabi_d2iz
+                0x10003f4c                double2int_z
  .text.__wrap___aeabi_d2uiz
-                0x10003f84       0x18 CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/pico_double/double_aeabi.S.obj
-                0x10003f84                double2uint
-                0x10003f84                __wrap___aeabi_d2uiz
+                0x10003f94       0x18 CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/pico_double/double_aeabi.S.obj
+                0x10003f94                double2uint
+                0x10003f94                __wrap___aeabi_d2uiz
  .text.__wrap___aeabi_d2f
-                0x10003f9c       0x18 CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/pico_double/double_aeabi.S.obj
-                0x10003f9c                __wrap___aeabi_d2f
+                0x10003fac       0x18 CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/pico_double/double_aeabi.S.obj
+                0x10003fac                __wrap___aeabi_d2f
  .text.__aeabi_double_init
-                0x10003fb4       0xcc CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/pico_double/double_init_rom.c.obj
-                0x10003fb4                __aeabi_double_init
+                0x10003fc4       0xcc CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/pico_double/double_init_rom.c.obj
+                0x10003fc4                __aeabi_double_init
  .text.double_table_shim_on_use_helper
-                0x10004080       0x34 CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/pico_double/double_v1_rom_shim.S.obj
-                0x10004080                double_table_shim_on_use_helper
+                0x10004090       0x34 CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/pico_double/double_v1_rom_shim.S.obj
+                0x10004090                double_table_shim_on_use_helper
  .text.__wrap___aeabi_dsub
-                0x100040b4       0x10 CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/pico_double/double_v1_rom_shim.S.obj
-                0x100040b4                drsub_shim
-                0x100040ba                dsub_shim
+                0x100040c4       0x10 CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/pico_double/double_v1_rom_shim.S.obj
+                0x100040c4                drsub_shim
+                0x100040ca                dsub_shim
  .text.dadd_shim
-                0x100040c4      0x15c CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/pico_double/double_v1_rom_shim.S.obj
-                0x100040c4                dadd_shim
+                0x100040d4      0x15c CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/pico_double/double_v1_rom_shim.S.obj
+                0x100040d4                dadd_shim
  .text.dmul_shim
-                0x10004220      0x15c CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/pico_double/double_v1_rom_shim.S.obj
-                0x10004220                dmul_shim
+                0x10004230      0x15c CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/pico_double/double_v1_rom_shim.S.obj
+                0x10004230                dmul_shim
  .text.ddiv_shim
-                0x1000437c      0x1b0 CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/pico_double/double_v1_rom_shim.S.obj
-                0x1000437c                ddiv_shim
+                0x1000438c      0x1b0 CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/pico_double/double_v1_rom_shim.S.obj
+                0x1000438c                ddiv_shim
  .text.double2uint_shim
-                0x1000452c        0xe CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/pico_double/double_v1_rom_shim.S.obj
-                0x1000452c                double2uint_shim
-                0x1000452e                double2ufix_shim
- *fill*         0x1000453a        0x2 
+                0x1000453c        0xe CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/pico_double/double_v1_rom_shim.S.obj
+                0x1000453c                double2uint_shim
+                0x1000453e                double2ufix_shim
+ *fill*         0x1000454a        0x2 
  .text.double2uint64_shim
-                0x1000453c       0x70 CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/pico_double/double_v1_rom_shim.S.obj
-                0x1000453c                double2uint64_shim
-                0x1000453e                double2ufix64_shim
-                0x1000455e                d2fix_a
+                0x1000454c       0x70 CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/pico_double/double_v1_rom_shim.S.obj
+                0x1000454c                double2uint64_shim
+                0x1000454e                double2ufix64_shim
+                0x1000456e                d2fix_a
  .text.double2float_shim
-                0x100045ac       0x5c CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/pico_double/double_v1_rom_shim.S.obj
-                0x100045ac                double2float_shim
+                0x100045bc       0x5c CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/pico_double/double_v1_rom_shim.S.obj
+                0x100045bc                double2float_shim
  .text.dunpacks
-                0x10004608       0x3c CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/pico_double/double_v1_rom_shim.S.obj
-                0x10004608                dunpacks
+                0x10004618       0x3c CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/pico_double/double_v1_rom_shim.S.obj
+                0x10004618                dunpacks
  .text.__aeabi_lmul
-                0x10004644       0x32 CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/pico_int64_ops/pico_int64_ops_aeabi.S.obj
-                0x10004644                __wrap___aeabi_lmul
- *fill*         0x10004676        0x2 
+                0x10004654       0x32 CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/pico_int64_ops/pico_int64_ops_aeabi.S.obj
+                0x10004654                __wrap___aeabi_lmul
+ *fill*         0x10004686        0x2 
  .text.__wrap___aeabi_farithmetic
-                0x10004678       0x58 CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/pico_float/float_aeabi.S.obj
-                0x10004678                __wrap___aeabi_frsub
-                0x1000467e                __wrap___aeabi_fsub
-                0x10004688                __wrap___aeabi_fadd
-                0x10004692                __wrap___aeabi_fdiv
-                0x100046be                __wrap___aeabi_fmul
+                0x10004688       0x58 CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/pico_float/float_aeabi.S.obj
+                0x10004688                __wrap___aeabi_frsub
+                0x1000468e                __wrap___aeabi_fsub
+                0x10004698                __wrap___aeabi_fadd
+                0x100046a2                __wrap___aeabi_fdiv
+                0x100046ce                __wrap___aeabi_fmul
  .text.__wrap___aeabi_ui2f
-                0x100046d0        0xa CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/pico_float/float_aeabi.S.obj
-                0x100046d0                __wrap___aeabi_ui2f
- *fill*         0x100046da        0x2 
+                0x100046e0        0xa CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/pico_float/float_aeabi.S.obj
+                0x100046e0                __wrap___aeabi_ui2f
+ *fill*         0x100046ea        0x2 
  .text.__wrap___aeabi_i2f
-                0x100046dc       0x44 CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/pico_float/float_aeabi.S.obj
-                0x100046dc                __wrap___aeabi_i2f
+                0x100046ec       0x44 CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/pico_float/float_aeabi.S.obj
+                0x100046ec                __wrap___aeabi_i2f
  .text.__wrap___aeabi_f2uiz
-                0x10004720       0x10 CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/pico_float/float_aeabi.S.obj
-                0x10004720                __wrap___aeabi_f2uiz
+                0x10004730       0x10 CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/pico_float/float_aeabi.S.obj
+                0x10004730                __wrap___aeabi_f2uiz
  .text.__aeabi_float_init
-                0x10004730       0xfc CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/pico_float/float_init_rom.c.obj
-                0x10004730                __aeabi_float_init
+                0x10004740       0xfc CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/pico_float/float_init_rom.c.obj
+                0x10004740                __aeabi_float_init
  .text.float_table_shim_on_use_helper
-                0x1000482c       0x34 CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/pico_float/float_v1_rom_shim.S.obj
-                0x1000482c                float_table_shim_on_use_helper
+                0x1000483c       0x34 CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/pico_float/float_v1_rom_shim.S.obj
+                0x1000483c                float_table_shim_on_use_helper
  .text.check_alloc
-                0x10004860       0x20 CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/pico_malloc/pico_malloc.c.obj
+                0x10004870       0x20 CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/pico_malloc/pico_malloc.c.obj
  .text.__wrap_malloc
-                0x10004880       0x14 CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/pico_malloc/pico_malloc.c.obj
-                0x10004880                __wrap_malloc
+                0x10004890       0x14 CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/pico_malloc/pico_malloc.c.obj
+                0x10004890                __wrap_malloc
  .text.__wrap_free
-                0x10004894        0x8 CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/pico_malloc/pico_malloc.c.obj
-                0x10004894                __wrap_free
- .text          0x1000489c       0x10 CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/pico_mem_ops/mem_ops_aeabi.S.obj
-                0x1000489c                __aeabi_mem_init
- .text.memset   0x100048ac        0xc CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/pico_mem_ops/mem_ops_aeabi.S.obj
-                0x100048ac                __wrap_memset
- .text.memcpy   0x100048b8        0xc CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/pico_mem_ops/mem_ops_aeabi.S.obj
-                0x100048b8                __wrap___aeabi_memcpy
-                0x100048b8                __wrap_memcpy
+                0x100048a4        0x8 CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/pico_malloc/pico_malloc.c.obj
+                0x100048a4                __wrap_free
+ .text          0x100048ac       0x10 CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/pico_mem_ops/mem_ops_aeabi.S.obj
+                0x100048ac                __aeabi_mem_init
+ .text.memset   0x100048bc        0xc CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/pico_mem_ops/mem_ops_aeabi.S.obj
+                0x100048bc                __wrap_memset
+ .text.memcpy   0x100048c8        0xc CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/pico_mem_ops/mem_ops_aeabi.S.obj
+                0x100048c8                __wrap___aeabi_memcpy
+                0x100048c8                __wrap_memcpy
  .text.stdio_out_chars_no_crlf
-                0x100048c4        0xe CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/pico_stdio/stdio.c.obj
- *fill*         0x100048d2        0x2 
+                0x100048d4        0xe CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/pico_stdio/stdio.c.obj
+ *fill*         0x100048e2        0x2 
  .text.stdio_out_chars_crlf
-                0x100048d4       0x80 CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/pico_stdio/stdio.c.obj
+                0x100048e4       0x80 CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/pico_stdio/stdio.c.obj
  .text.stdio_stack_buffer_flush
-                0x10004954       0x44 CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/pico_stdio/stdio.c.obj
+                0x10004964       0x44 CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/pico_stdio/stdio.c.obj
  .text.stdio_buffered_printer
-                0x10004998       0x20 CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/pico_stdio/stdio.c.obj
+                0x100049a8       0x20 CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/pico_stdio/stdio.c.obj
  .text.update_us_since_boot
-                0x100049b8       0x24 CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/pico_stdio/stdio.c.obj
+                0x100049c8       0x24 CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/pico_stdio/stdio.c.obj
  .text.get_absolute_time
-                0x100049dc       0x22 CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/pico_stdio/stdio.c.obj
- *fill*         0x100049fe        0x2 
+                0x100049ec       0x22 CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/pico_stdio/stdio.c.obj
+ *fill*         0x10004a0e        0x2 
  .text.delayed_by_ms
-                0x10004a00       0x44 CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/pico_stdio/stdio.c.obj
+                0x10004a10       0x44 CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/pico_stdio/stdio.c.obj
  .text.make_timeout_time_ms
-                0x10004a44       0x20 CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/pico_stdio/stdio.c.obj
+                0x10004a54       0x20 CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/pico_stdio/stdio.c.obj
  .text.stdout_serialize_begin
-                0x10004a64       0x20 CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/pico_stdio/stdio.c.obj
-                0x10004a64                stdout_serialize_begin
+                0x10004a74       0x20 CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/pico_stdio/stdio.c.obj
+                0x10004a74                stdout_serialize_begin
  .text.stdout_serialize_end
-                0x10004a84       0x10 CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/pico_stdio/stdio.c.obj
-                0x10004a84                stdout_serialize_end
+                0x10004a94       0x10 CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/pico_stdio/stdio.c.obj
+                0x10004a94                stdout_serialize_end
  .text.stdio_put_string
-                0x10004a94       0x98 CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/pico_stdio/stdio.c.obj
+                0x10004aa4       0x98 CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/pico_stdio/stdio.c.obj
  .text.stdio_flush
-                0x10004b2c       0x20 CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/pico_stdio/stdio.c.obj
-                0x10004b2c                stdio_flush
+                0x10004b3c       0x20 CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/pico_stdio/stdio.c.obj
+                0x10004b3c                stdio_flush
  .text.__wrap_puts
-                0x10004b4c       0x1e CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/pico_stdio/stdio.c.obj
-                0x10004b4c                __wrap_puts
- *fill*         0x10004b6a        0x2 
+                0x10004b5c       0x1e CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/pico_stdio/stdio.c.obj
+                0x10004b5c                __wrap_puts
+ *fill*         0x10004b7a        0x2 
  .text.__wrap_vprintf
-                0x10004b6c       0x40 CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/pico_stdio/stdio.c.obj
-                0x10004b6c                __wrap_vprintf
+                0x10004b7c       0x40 CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/pico_stdio/stdio.c.obj
+                0x10004b7c                __wrap_vprintf
  .text.__wrap_printf
-                0x10004bac       0x18 CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/pico_stdio/stdio.c.obj
-                0x10004bac                __wrap_printf
+                0x10004bbc       0x18 CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/pico_stdio/stdio.c.obj
+                0x10004bbc                __wrap_printf
  .text._retrieve_unique_id_on_boot
-                0x10004bc4       0x10 CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/pico_unique_id/unique_id.c.obj
+                0x10004bd4       0x10 CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/pico_unique_id/unique_id.c.obj
  .text.flash_get_unique_id
-                0x10004bd4       0x46 CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/hardware_flash/flash.c.obj
-                0x10004bd4                flash_get_unique_id
+                0x10004be4       0x46 CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/hardware_flash/flash.c.obj
+                0x10004be4                flash_get_unique_id
  .text.i2c_write_blocking_internal
-                0x10004c1a      0x146 CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/hardware_i2c/i2c.c.obj
+                0x10004c2a      0x146 CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/hardware_i2c/i2c.c.obj
  .text.i2c_set_baudrate
-                0x10004d60       0xf0 CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/hardware_i2c/i2c.c.obj
-                0x10004d60                i2c_set_baudrate
+                0x10004d70       0xf0 CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/hardware_i2c/i2c.c.obj
+                0x10004d70                i2c_set_baudrate
  .text.i2c_init
-                0x10004e50       0x58 CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/hardware_i2c/i2c.c.obj
-                0x10004e50                i2c_init
+                0x10004e60       0x58 CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/hardware_i2c/i2c.c.obj
+                0x10004e60                i2c_init
  .text.i2c_write_blocking
-                0x10004ea8       0x18 CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/hardware_i2c/i2c.c.obj
-                0x10004ea8                i2c_write_blocking
+                0x10004eb8       0x18 CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/hardware_i2c/i2c.c.obj
+                0x10004eb8                i2c_write_blocking
  .text.pio_get_default_sm_config
-                0x10004ec0       0x28 CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/hardware_pio/pio.c.obj
+                0x10004ed0       0x28 CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/hardware_pio/pio.c.obj
  .text._pio_can_add_program_at_offset
-                0x10004ee8       0x3c CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/hardware_pio/pio.c.obj
+                0x10004ef8       0x3c CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/hardware_pio/pio.c.obj
  .text._pio_find_offset_for_program
-                0x10004f24       0x7c CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/hardware_pio/pio.c.obj
+                0x10004f34       0x7c CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/hardware_pio/pio.c.obj
  .text._pio_add_program_at_offset
-                0x10004fa0       0x7c CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/hardware_pio/pio.c.obj
+                0x10004fb0       0x7c CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/hardware_pio/pio.c.obj
  .text.pio_claim_unused_sm
-                0x1000501c       0x3c CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/hardware_pio/pio.c.obj
-                0x1000501c                pio_claim_unused_sm
+                0x1000502c       0x3c CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/hardware_pio/pio.c.obj
+                0x1000502c                pio_claim_unused_sm
  .text.pio_can_add_program
-                0x10005058       0x26 CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/hardware_pio/pio.c.obj
-                0x10005058                pio_can_add_program
- *fill*         0x1000507e        0x2 
+                0x10005068       0x26 CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/hardware_pio/pio.c.obj
+                0x10005068                pio_can_add_program
+ *fill*         0x1000508e        0x2 
  .text.pio_add_program
-                0x10005080       0x38 CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/hardware_pio/pio.c.obj
-                0x10005080                pio_add_program
+                0x10005090       0x38 CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/hardware_pio/pio.c.obj
+                0x10005090                pio_add_program
  .text.pio_sm_set_consecutive_pindirs
-                0x100050b8       0xa4 CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/hardware_pio/pio.c.obj
-                0x100050b8                pio_sm_set_consecutive_pindirs
+                0x100050c8       0xa4 CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/hardware_pio/pio.c.obj
+                0x100050c8                pio_sm_set_consecutive_pindirs
  .text.pio_sm_init
-                0x1000515c       0xb0 CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/hardware_pio/pio.c.obj
-                0x1000515c                pio_sm_init
- .text.malloc   0x1000520c       0x14 /Applications/ArmGNUToolchain/12.3.rel1/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libg.a(libc_a-malloc.o)
-                0x1000520c                malloc
- .text.free     0x10005220       0x14 /Applications/ArmGNUToolchain/12.3.rel1/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libg.a(libc_a-malloc.o)
-                0x10005220                free
+                0x1000516c       0xb0 CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/hardware_pio/pio.c.obj
+                0x1000516c                pio_sm_init
+ .text.malloc   0x1000521c       0x14 /Applications/ArmGNUToolchain/12.3.rel1/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libg.a(libc_a-malloc.o)
+                0x1000521c                malloc
+ .text.free     0x10005230       0x14 /Applications/ArmGNUToolchain/12.3.rel1/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libg.a(libc_a-malloc.o)
+                0x10005230                free
  .text._malloc_r
-                0x10005234      0x5c4 /Applications/ArmGNUToolchain/12.3.rel1/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libg.a(libc_a-mallocr.o)
-                0x10005234                _malloc_r
+                0x10005244      0x5c4 /Applications/ArmGNUToolchain/12.3.rel1/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libg.a(libc_a-mallocr.o)
+                0x10005244                _malloc_r
  .text.__malloc_lock
-                0x100057f8       0x10 /Applications/ArmGNUToolchain/12.3.rel1/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libg.a(libc_a-mlock.o)
-                0x100057f8                __malloc_lock
- .text.__malloc_unlock
                 0x10005808       0x10 /Applications/ArmGNUToolchain/12.3.rel1/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libg.a(libc_a-mlock.o)
-                0x10005808                __malloc_unlock
- .text._sbrk_r  0x10005818       0x24 /Applications/ArmGNUToolchain/12.3.rel1/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libg.a(libc_a-sbrkr.o)
-                0x10005818                _sbrk_r
- .text.__errno  0x1000583c        0xc /Applications/ArmGNUToolchain/12.3.rel1/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libg.a(libc_a-errno.o)
-                0x1000583c                __errno
- .text.sysconf  0x10005848       0x1c /Applications/ArmGNUToolchain/12.3.rel1/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libg.a(libc_a-sysconf.o)
-                0x10005848                sysconf
- .text          0x10005864       0x88 /Applications/ArmGNUToolchain/12.3.rel1/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libg.a(libc_a-strcmp.o)
-                0x10005864                strcmp
+                0x10005808                __malloc_lock
+ .text.__malloc_unlock
+                0x10005818       0x10 /Applications/ArmGNUToolchain/12.3.rel1/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libg.a(libc_a-mlock.o)
+                0x10005818                __malloc_unlock
+ .text._sbrk_r  0x10005828       0x24 /Applications/ArmGNUToolchain/12.3.rel1/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libg.a(libc_a-sbrkr.o)
+                0x10005828                _sbrk_r
+ .text.__errno  0x1000584c        0xc /Applications/ArmGNUToolchain/12.3.rel1/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libg.a(libc_a-errno.o)
+                0x1000584c                __errno
+ .text.sysconf  0x10005858       0x1c /Applications/ArmGNUToolchain/12.3.rel1/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libg.a(libc_a-sysconf.o)
+                0x10005858                sysconf
  .text.__retarget_lock_acquire_recursive
-                0x100058ec        0x4 /Applications/ArmGNUToolchain/12.3.rel1/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libg.a(libc_a-lock.o)
-                0x100058ec                __retarget_lock_acquire_recursive
+                0x10005874        0x4 /Applications/ArmGNUToolchain/12.3.rel1/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libg.a(libc_a-lock.o)
+                0x10005874                __retarget_lock_acquire_recursive
  .text.__retarget_lock_release_recursive
-                0x100058f0        0x4 /Applications/ArmGNUToolchain/12.3.rel1/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libg.a(libc_a-lock.o)
-                0x100058f0                __retarget_lock_release_recursive
- .text.strlen   0x100058f4       0x5c /Applications/ArmGNUToolchain/12.3.rel1/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libg.a(libc_a-strlen-stub.o)
-                0x100058f4                strlen
+                0x10005878        0x4 /Applications/ArmGNUToolchain/12.3.rel1/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libg.a(libc_a-lock.o)
+                0x10005878                __retarget_lock_release_recursive
+ .text.strlen   0x1000587c       0x5c /Applications/ArmGNUToolchain/12.3.rel1/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libg.a(libc_a-strlen-stub.o)
+                0x1000587c                strlen
  .text._malloc_trim_r
-                0x10005950       0xb4 /Applications/ArmGNUToolchain/12.3.rel1/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libg.a(libc_a-freer.o)
-                0x10005950                _malloc_trim_r
- .text._free_r  0x10005a04      0x1d4 /Applications/ArmGNUToolchain/12.3.rel1/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libg.a(libc_a-freer.o)
-                0x10005a04                _free_r
+                0x100058d8       0xb4 /Applications/ArmGNUToolchain/12.3.rel1/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libg.a(libc_a-freer.o)
+                0x100058d8                _malloc_trim_r
+ .text._free_r  0x1000598c      0x1d4 /Applications/ArmGNUToolchain/12.3.rel1/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libg.a(libc_a-freer.o)
+                0x1000598c                _free_r
  *(.fini)
- .fini          0x10005bd8        0x4 /Applications/ArmGNUToolchain/12.3.rel1/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/12.3.1/thumb/v6-m/nofp/crti.o
-                0x10005bd8                _fini
- *fill*         0x10005bdc        0x4 
- .fini.__stub   0x10005be0       0x50 linker stubs
+ .fini          0x10005b60        0x4 /Applications/ArmGNUToolchain/12.3.rel1/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/12.3.1/thumb/v6-m/nofp/crti.o
+                0x10005b60                _fini
+ *fill*         0x10005b64        0x4 
+ .fini.__stub   0x10005b68       0x50 linker stubs
  *crtbegin.o(.ctors)
  *crtbegin?.o(.ctors)
  *(EXCLUDE_FILE(*crtend.o *crtend?.o) .ctors)
@@ -3068,293 +3063,294 @@ LOAD /Applications/ArmGNUToolchain/12.3.rel1/arm-none-eabi/bin/../lib/gcc/arm-no
  *(SORT_BY_NAME(.dtors.*))
  *(.dtors)
  *(.eh_frame*)
- .eh_frame      0x10005c30        0x0 /Applications/ArmGNUToolchain/12.3.rel1/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/12.3.1/thumb/v6-m/nofp/crtbegin.o
-                0x10005c30                        . = ALIGN (0x4)
+ .eh_frame      0x10005bb8        0x0 /Applications/ArmGNUToolchain/12.3.rel1/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/12.3.1/thumb/v6-m/nofp/crtbegin.o
+                0x10005bb8                        . = ALIGN (0x4)
 
-.glue_7         0x10005c30        0x0
- .glue_7        0x10005c30        0x0 linker stubs
+.glue_7         0x10005bb8        0x0
+ .glue_7        0x10005bb8        0x0 linker stubs
 
-.glue_7t        0x10005c30        0x0
- .glue_7t       0x10005c30        0x0 linker stubs
+.glue_7t        0x10005bb8        0x0
+ .glue_7t       0x10005bb8        0x0 linker stubs
 
-.vfp11_veneer   0x10005c30        0x0
- .vfp11_veneer  0x10005c30        0x0 linker stubs
+.vfp11_veneer   0x10005bb8        0x0
+ .vfp11_veneer  0x10005bb8        0x0 linker stubs
 
-.v4_bx          0x10005c30        0x0
- .v4_bx         0x10005c30        0x0 linker stubs
+.v4_bx          0x10005bb8        0x0
+ .v4_bx         0x10005bb8        0x0 linker stubs
 
-.iplt           0x10005c30        0x0
- .iplt          0x10005c30        0x0 /Applications/ArmGNUToolchain/12.3.rel1/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/12.3.1/thumb/v6-m/nofp/crtbegin.o
+.iplt           0x10005bb8        0x0
+ .iplt          0x10005bb8        0x0 /Applications/ArmGNUToolchain/12.3.rel1/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/12.3.1/thumb/v6-m/nofp/crtbegin.o
 
-.rodata         0x10005c30     0x14d8
+.rodata         0x10005bb8     0x1430
  *(EXCLUDE_FILE(*libm.a: *libc.a:*lib_a-mem*.o *libgcc.a:) .rodata*)
- .rodata.setAns.str1.4
-                0x10005c30        0x2 CMakeFiles/main.dir/main.c.obj
- *fill*         0x10005c32        0x2 
+ .rodata.Trs_KeyV.str1.4
+                0x10005bb8       0x1a CMakeFiles/main.dir/main.c.obj
+                                 0x26 (size before relaxing)
+ *fill*         0x10005bd2        0x2 
+ .rodata.Trs_KeyV
+                0x10005bd4       0xc8 CMakeFiles/main.dir/main.c.obj
+ .rodata.get_input.str1.4
+                0x10005c9c       0x18 CMakeFiles/main.dir/main.c.obj
  .rodata.main.str1.4
-                0x10005c34       0xb0 CMakeFiles/main.dir/main.c.obj
-                                 0xb4 (size before relaxing)
- .rodata.main   0x10005ce4      0x15c CMakeFiles/main.dir/main.c.obj
- .rodata.font   0x10005e40      0x128 CMakeFiles/main.dir/main.c.obj
- .rodata        0x10005f68       0x1a CMakeFiles/main.dir/main.c.obj
- *fill*         0x10005f82        0x2 
+                0x10005cb4       0x68 CMakeFiles/main.dir/main.c.obj
+ .rodata.font   0x10005d1c      0x128 CMakeFiles/main.dir/main.c.obj
+ .rodata        0x10005e44       0x24 CMakeFiles/main.dir/main.c.obj
  .rodata.nec_receive_program
-                0x10005f84        0x6 CMakeFiles/main.dir/nec_receive.c.obj
- *fill*         0x10005f8a        0x2 
+                0x10005e68        0x6 CMakeFiles/main.dir/nec_receive.c.obj
+ *fill*         0x10005e6e        0x2 
  .rodata.nec_receive_program_instructions
-                0x10005f8c       0x12 CMakeFiles/main.dir/nec_receive.c.obj
- *fill*         0x10005f9e        0x2 
+                0x10005e70       0x12 CMakeFiles/main.dir/nec_receive.c.obj
+ *fill*         0x10005e82        0x2 
  .rodata.resolve_branch.str1.4
-                0x10005fa0       0x54 CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/hardware_irq/irq.c.obj
+                0x10005e84       0x54 CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/hardware_irq/irq.c.obj
  .rodata.make_branch.str1.4
-                0x10005ff4       0x30 CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/hardware_irq/irq.c.obj
+                0x10005ed8       0x30 CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/hardware_irq/irq.c.obj
  .rodata.insert_branch_and_link.str1.4
-                0x10006024       0x10 CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/hardware_irq/irq.c.obj
+                0x10005f08       0x10 CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/hardware_irq/irq.c.obj
  .rodata.irq_set_exclusive_handler.str1.4
-                0x10006034       0x36 CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/hardware_irq/irq.c.obj
- *fill*         0x1000606a        0x2 
+                0x10005f18       0x36 CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/hardware_irq/irq.c.obj
+ *fill*         0x10005f4e        0x2 
  .rodata.irq_remove_handler.str1.4
-                0x1000606c       0x3a CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/hardware_irq/irq.c.obj
- *fill*         0x100060a6        0x2 
+                0x10005f50       0x3a CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/hardware_irq/irq.c.obj
+ *fill*         0x10005f8a        0x2 
  .rodata.irq_add_tail_to_free_list.str1.4
-                0x100060a8       0x3a CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/hardware_irq/irq.c.obj
- *fill*         0x100060e2        0x2 
+                0x10005f8c       0x3a CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/hardware_irq/irq.c.obj
+ *fill*         0x10005fc6        0x2 
  .rodata.__func__.0
-                0x100060e4       0x1a CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/hardware_irq/irq.c.obj
- *fill*         0x100060fe        0x2 
+                0x10005fc8       0x1a CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/hardware_irq/irq.c.obj
+ *fill*         0x10005fe2        0x2 
  .rodata.__func__.1
-                0x10006100       0x17 CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/hardware_irq/irq.c.obj
- *fill*         0x10006117        0x1 
+                0x10005fe4       0x17 CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/hardware_irq/irq.c.obj
+ *fill*         0x10005ffb        0x1 
  .rodata.__func__.2
-                0x10006118       0x13 CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/hardware_irq/irq.c.obj
- *fill*         0x1000612b        0x1 
+                0x10005ffc       0x13 CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/hardware_irq/irq.c.obj
+ *fill*         0x1000600f        0x1 
  .rodata.__func__.3
-                0x1000612c        0xc CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/hardware_irq/irq.c.obj
+                0x10006010        0xc CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/hardware_irq/irq.c.obj
  .rodata.__func__.4
-                0x10006138        0xf CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/hardware_irq/irq.c.obj
- *fill*         0x10006147        0x1 
+                0x1000601c        0xf CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/hardware_irq/irq.c.obj
+ *fill*         0x1000602b        0x1 
  .rodata.__func__.6
-                0x10006148       0x1a CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/hardware_irq/irq.c.obj
- *fill*         0x10006162        0x2 
+                0x1000602c       0x1a CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/hardware_irq/irq.c.obj
+ *fill*         0x10006046        0x2 
  .rodata.str1.4
-                0x10006164       0x89 CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/common/pico_sync/mutex.c.obj
- *fill*         0x100061ed        0x3 
+                0x10006048       0x89 CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/common/pico_sync/mutex.c.obj
+ *fill*         0x100060d1        0x3 
  .rodata.__func__.1
-                0x100061f0        0xb CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/common/pico_sync/mutex.c.obj
- *fill*         0x100061fb        0x1 
+                0x100060d4        0xb CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/common/pico_sync/mutex.c.obj
+ *fill*         0x100060df        0x1 
  .rodata.__func__.3
-                0x100061fc       0x18 CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/common/pico_sync/mutex.c.obj
+                0x100060e0       0x18 CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/common/pico_sync/mutex.c.obj
  .rodata.get_entry.str1.4
-                0x10006214       0x5a CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/common/pico_time/time.c.obj
- *fill*         0x1000626e        0x2 
+                0x100060f8       0x5a CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/common/pico_time/time.c.obj
+ *fill*         0x10006152        0x2 
  .rodata.update_us_since_boot.str1.4
-                0x10006270       0x60 CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/common/pico_time/time.c.obj
+                0x10006154       0x60 CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/common/pico_time/time.c.obj
  .rodata.ph_get_node.str1.4
-                0x100062d0       0x65 CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/common/pico_time/time.c.obj
- *fill*         0x10006335        0x3 
+                0x100061b4       0x65 CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/common/pico_time/time.c.obj
+ *fill*         0x10006219        0x3 
  .rodata.ph_add_child_node.str1.4
-                0x10006338       0x2e CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/common/pico_time/time.c.obj
- *fill*         0x10006366        0x2 
+                0x1000621c       0x2e CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/common/pico_time/time.c.obj
+ *fill*         0x1000624a        0x2 
  .rodata.ph_insert_node.str1.4
-                0x10006368        0x3 CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/common/pico_time/time.c.obj
- *fill*         0x1000636b        0x1 
+                0x1000624c        0x3 CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/common/pico_time/time.c.obj
+ *fill*         0x1000624f        0x1 
  .rodata.ph_free_node.str1.4
-                0x1000636c       0x38 CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/common/pico_time/time.c.obj
+                0x10006250       0x38 CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/common/pico_time/time.c.obj
  .rodata.add_alarm_under_lock.str1.4
-                0x100063a4       0x28 CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/common/pico_time/time.c.obj
+                0x10006288       0x28 CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/common/pico_time/time.c.obj
  .rodata.alarm_pool_alarm_callback.str1.4
-                0x100063cc       0x60 CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/common/pico_time/time.c.obj
+                0x100062b0       0x60 CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/common/pico_time/time.c.obj
  .rodata.alarm_pool_get_default.str1.4
-                0x1000642c       0x21 CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/common/pico_time/time.c.obj
- *fill*         0x1000644d        0x3 
+                0x10006310       0x21 CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/common/pico_time/time.c.obj
+ *fill*         0x10006331        0x3 
  .rodata.alarm_pool_cancel_alarm.str1.4
-                0x10006450       0x27 CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/common/pico_time/time.c.obj
- *fill*         0x10006477        0x1 
+                0x10006334       0x27 CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/common/pico_time/time.c.obj
+ *fill*         0x1000635b        0x1 
  .rodata.sleep_until.str1.4
-                0x10006478       0x4d CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/common/pico_time/time.c.obj
- *fill*         0x100064c5        0x3 
+                0x1000635c       0x4d CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/common/pico_time/time.c.obj
+ *fill*         0x100063a9        0x3 
  .rodata.__func__.1
-                0x100064c8       0x18 CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/common/pico_time/time.c.obj
+                0x100063ac       0x18 CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/common/pico_time/time.c.obj
  .rodata.__func__.3
-                0x100064e0       0x17 CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/common/pico_time/time.c.obj
- *fill*         0x100064f7        0x1 
+                0x100063c4       0x17 CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/common/pico_time/time.c.obj
+ *fill*         0x100063db        0x1 
  .rodata.__func__.4
-                0x100064f8       0x12 CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/common/pico_time/time.c.obj
- *fill*         0x1000650a        0x2 
+                0x100063dc       0x12 CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/common/pico_time/time.c.obj
+ *fill*         0x100063ee        0x2 
  .rodata.__func__.5
-                0x1000650c        0xd CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/common/pico_time/time.c.obj
- *fill*         0x10006519        0x3 
+                0x100063f0        0xd CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/common/pico_time/time.c.obj
+ *fill*         0x100063fd        0x3 
  .rodata.__func__.6
-                0x1000651c       0x12 CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/common/pico_time/time.c.obj
- *fill*         0x1000652e        0x2 
+                0x10006400       0x12 CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/common/pico_time/time.c.obj
+ *fill*         0x10006412        0x2 
  .rodata.__func__.7
-                0x10006530        0xf CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/common/pico_time/time.c.obj
- *fill*         0x1000653f        0x1 
+                0x10006414        0xf CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/common/pico_time/time.c.obj
+ *fill*         0x10006423        0x1 
  .rodata.__func__.8
-                0x10006540        0xc CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/common/pico_time/time.c.obj
+                0x10006424        0xc CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/common/pico_time/time.c.obj
  .rodata.__func__.9
-                0x1000654c       0x15 CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/common/pico_time/time.c.obj
- *fill*         0x10006561        0x3 
+                0x10006430       0x15 CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/common/pico_time/time.c.obj
+ *fill*         0x10006445        0x3 
  .rodata.__func__.10
-                0x10006564       0x15 CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/common/pico_time/time.c.obj
- *fill*         0x10006579        0x3 
+                0x10006448       0x15 CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/common/pico_time/time.c.obj
+ *fill*         0x1000645d        0x3 
  .rodata.__func__.11
-                0x1000657c       0x1a CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/common/pico_time/time.c.obj
- *fill*         0x10006596        0x2 
+                0x10006460       0x1a CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/common/pico_time/time.c.obj
+ *fill*         0x1000647a        0x2 
  .rodata.__func__.12
-                0x10006598        0xa CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/common/pico_time/time.c.obj
- *fill*         0x100065a2        0x2 
+                0x1000647c        0xa CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/common/pico_time/time.c.obj
+ *fill*         0x10006486        0x2 
  .rodata.hardware_alarm_claim.str1.4
-                0x100065a4       0x22 CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/hardware_timer/timer.c.obj
- *fill*         0x100065c6        0x2 
+                0x10006488       0x22 CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/hardware_timer/timer.c.obj
+ *fill*         0x100064aa        0x2 
  .rodata.hardware_alarm_set_target.str1.4
-                0x100065c8       0x64 CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/hardware_timer/timer.c.obj
+                0x100064ac       0x64 CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/hardware_timer/timer.c.obj
  .rodata.__func__.0
-                0x1000662c       0x1a CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/hardware_timer/timer.c.obj
+                0x10006510       0x1a CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/hardware_timer/timer.c.obj
  .rodata.ph_get_node.str1.4
-                0x10006646       0x65 CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/common/pico_util/pheap.c.obj
+                0x1000652a       0x65 CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/common/pico_util/pheap.c.obj
  .rodata.ph_add_child_node.str1.4
-                0x10006646       0x2e CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/common/pico_util/pheap.c.obj
- *fill*         0x10006646        0x2 
+                0x1000652a       0x2e CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/common/pico_util/pheap.c.obj
+ *fill*         0x1000652a        0x2 
  .rodata.ph_remove_any_head.str1.4
-                0x10006648       0x8c CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/common/pico_util/pheap.c.obj
+                0x1000652c       0x8c CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/common/pico_util/pheap.c.obj
                                  0xa0 (size before relaxing)
  .rodata.ph_remove_and_free_node.str1.4
-                0x100066d4       0x1e CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/common/pico_util/pheap.c.obj
+                0x100065b8       0x1e CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/common/pico_util/pheap.c.obj
                                  0x26 (size before relaxing)
- *fill*         0x100066f2        0x2 
+ *fill*         0x100065d6        0x2 
  .rodata.__func__.0
-                0x100066f4       0x18 CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/common/pico_util/pheap.c.obj
+                0x100065d8       0x18 CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/common/pico_util/pheap.c.obj
  .rodata.__func__.1
-                0x1000670c       0x13 CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/common/pico_util/pheap.c.obj
- *fill*         0x1000671f        0x1 
+                0x100065f0       0x13 CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/common/pico_util/pheap.c.obj
+ *fill*         0x10006603        0x1 
  .rodata.__func__.2
-                0x10006720       0x12 CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/common/pico_util/pheap.c.obj
- *fill*         0x10006732        0x2 
+                0x10006604       0x12 CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/common/pico_util/pheap.c.obj
+ *fill*         0x10006616        0x2 
  .rodata.__func__.3
-                0x10006734        0xc CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/common/pico_util/pheap.c.obj
+                0x10006618        0xc CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/common/pico_util/pheap.c.obj
  .rodata.clock_configure.str1.4
-                0x10006740       0x56 CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/hardware_clocks/clocks.c.obj
- *fill*         0x10006796        0x2 
+                0x10006624       0x56 CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/hardware_clocks/clocks.c.obj
+ *fill*         0x1000667a        0x2 
  .rodata.__func__.1
-                0x10006798       0x10 CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/hardware_clocks/clocks.c.obj
+                0x1000667c       0x10 CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/hardware_clocks/clocks.c.obj
  .rodata.pll_init.str1.4
-                0x100067a8      0x120 CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/hardware_pll/pll.c.obj
+                0x1000668c      0x120 CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/hardware_pll/pll.c.obj
  .rodata.__func__.0
-                0x100068c8        0x9 CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/hardware_pll/pll.c.obj
- *fill*         0x100068d1        0x3 
+                0x100067ac        0x9 CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/hardware_pll/pll.c.obj
+ *fill*         0x100067b5        0x3 
  .rodata.__assert_func.str1.4
-                0x100068d4       0x3f CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/pico_runtime/runtime.c.obj
+                0x100067b8       0x3f CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/pico_runtime/runtime.c.obj
                                  0x43 (size before relaxing)
- *fill*         0x10006913        0x1 
+ *fill*         0x100067f7        0x1 
  .rodata.runtime_init.str1.4
-                0x10006914       0x60 CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/pico_runtime/runtime.c.obj
+                0x100067f8       0x60 CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/pico_runtime/runtime.c.obj
  .rodata.panic.str1.4
-                0x10006974       0x12 CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/pico_runtime/runtime.c.obj
- *fill*         0x10006986        0x2 
+                0x10006858       0x12 CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/pico_runtime/runtime.c.obj
+ *fill*         0x1000686a        0x2 
  .rodata.__func__.2
-                0x10006988        0xd CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/pico_runtime/runtime.c.obj
- *fill*         0x10006995        0x3 
+                0x1000686c        0xd CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/pico_runtime/runtime.c.obj
+ *fill*         0x10006879        0x3 
  .rodata._ftoa.str1.4
-                0x10006998       0x15 CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/pico_printf/printf.c.obj
- *fill*         0x100069ad        0x3 
+                0x1000687c       0x15 CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/pico_printf/printf.c.obj
+ *fill*         0x10006891        0x3 
  .rodata._vsnprintf
-                0x100069b0      0x19c CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/pico_printf/printf.c.obj
- *fill*         0x10006b4c        0x4 
+                0x10006894      0x19c CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/pico_printf/printf.c.obj
  .rodata.pow10.0
-                0x10006b50       0x50 CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/pico_printf/printf.c.obj
+                0x10006a30       0x50 CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/pico_printf/printf.c.obj
  .rodata.__aeabi_double_init.str1.4
-                0x10006ba0       0x9b CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/pico_double/double_init_rom.c.obj
- *fill*         0x10006c3b        0x1 
+                0x10006a80       0x9b CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/pico_double/double_init_rom.c.obj
+ *fill*         0x10006b1b        0x1 
  .rodata.__func__.0
-                0x10006c3c       0x14 CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/pico_double/double_init_rom.c.obj
+                0x10006b1c       0x14 CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/pico_double/double_init_rom.c.obj
  .rodata.__aeabi_float_init.str1.4
-                0x10006c50       0x79 CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/pico_float/float_init_rom.c.obj
+                0x10006b30       0x79 CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/pico_float/float_init_rom.c.obj
                                  0x7d (size before relaxing)
- *fill*         0x10006cc9        0x3 
+ *fill*         0x10006ba9        0x3 
  .rodata.__func__.0
-                0x10006ccc       0x13 CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/pico_float/float_init_rom.c.obj
- *fill*         0x10006cdf        0x1 
+                0x10006bac       0x13 CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/pico_float/float_init_rom.c.obj
+ *fill*         0x10006bbf        0x1 
  .rodata.check_alloc.str1.4
-                0x10006ce0        0xe CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/pico_malloc/pico_malloc.c.obj
- *fill*         0x10006cee        0x2 
+                0x10006bc0        0xe CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/pico_malloc/pico_malloc.c.obj
+ *fill*         0x10006bce        0x2 
  .rodata.str1.4
-                0x10006cf0       0x3c CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/pico_standard_link/binary_info.c.obj
+                0x10006bd0       0x3c CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/pico_standard_link/binary_info.c.obj
  .rodata.__bi_81
-                0x10006d2c        0xc CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/pico_standard_link/binary_info.c.obj
+                0x10006c0c        0xc CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/pico_standard_link/binary_info.c.obj
  .rodata.__bi_75
-                0x10006d38        0xc CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/pico_standard_link/binary_info.c.obj
+                0x10006c18        0xc CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/pico_standard_link/binary_info.c.obj
  .rodata.__bi_44
-                0x10006d44        0xc CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/pico_standard_link/binary_info.c.obj
+                0x10006c24        0xc CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/pico_standard_link/binary_info.c.obj
  .rodata.update_us_since_boot.str1.4
-                0x10006d50       0x60 CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/pico_stdio/stdio.c.obj
+                0x10006c30       0x60 CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/pico_stdio/stdio.c.obj
  .rodata.crlf_str.2
-                0x10006d50        0x2 CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/pico_stdio/stdio.c.obj
- *fill*         0x10006d52        0x2 
+                0x10006c30        0x2 CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/pico_stdio/stdio.c.obj
+ *fill*         0x10006c32        0x2 
  .rodata.__func__.3
-                0x10006d54       0x15 CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/pico_stdio/stdio.c.obj
- *fill*         0x10006d69        0x3 
+                0x10006c34       0x15 CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/pico_stdio/stdio.c.obj
+ *fill*         0x10006c49        0x3 
  .rodata.str1.4
-                0x10006d6c      0x156 CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/hardware_flash/flash.c.obj
- *fill*         0x10006ec2        0x2 
+                0x10006c4c      0x156 CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/hardware_flash/flash.c.obj
+ *fill*         0x10006da2        0x2 
  .rodata.__func__.0
-                0x10006ec4        0xd CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/hardware_flash/flash.c.obj
- *fill*         0x10006ed1        0x3 
+                0x10006da4        0xd CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/hardware_flash/flash.c.obj
+ *fill*         0x10006db1        0x3 
  .rodata.i2c_set_baudrate.str1.4
-                0x10006ed4       0x5c CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/hardware_i2c/i2c.c.obj
+                0x10006db4       0x5c CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/hardware_i2c/i2c.c.obj
  .rodata.__func__.0
-                0x10006f30       0x11 CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/hardware_i2c/i2c.c.obj
- *fill*         0x10006f41        0x3 
+                0x10006e10       0x11 CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/hardware_i2c/i2c.c.obj
+ *fill*         0x10006e21        0x3 
  .rodata._pio_find_offset_for_program.str1.4
-                0x10006f44       0x68 CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/hardware_pio/pio.c.obj
+                0x10006e24       0x68 CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/hardware_pio/pio.c.obj
  .rodata._pio_add_program_at_offset.str1.4
-                0x10006fac       0x11 CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/hardware_pio/pio.c.obj
- *fill*         0x10006fbd        0x3 
+                0x10006e8c       0x11 CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/hardware_pio/pio.c.obj
+ *fill*         0x10006e9d        0x3 
  .rodata.pio_claim_unused_sm.str1.4
-                0x10006fc0       0x24 CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/hardware_pio/pio.c.obj
+                0x10006ea0       0x24 CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/hardware_pio/pio.c.obj
  .rodata.__func__.1
-                0x10006fe4       0x1d CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/hardware_pio/pio.c.obj
- *fill*         0x10007001        0x3 
+                0x10006ec4       0x1d CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/hardware_pio/pio.c.obj
+ *fill*         0x10006ee1        0x3 
  .rodata._ctype_
-                0x10007004      0x101 /Applications/ArmGNUToolchain/12.3.rel1/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libg.a(libc_a-ctype_.o)
-                0x10007004                _ctype_
-                0x10007108                        . = ALIGN (0x4)
- *fill*         0x10007105        0x3 
+                0x10006ee4      0x101 /Applications/ArmGNUToolchain/12.3.rel1/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libg.a(libc_a-ctype_.o)
+                0x10006ee4                _ctype_
+                0x10006fe8                        . = ALIGN (0x4)
+ *fill*         0x10006fe5        0x3 
  *(SORT_BY_ALIGNMENT(SORT_BY_NAME(.flashdata*)))
-                0x10007108                        . = ALIGN (0x4)
+                0x10006fe8                        . = ALIGN (0x4)
 
 .ARM.extab
  *(.ARM.extab* .gnu.linkonce.armextab.*)
-                0x10007108                        __exidx_start = .
+                0x10006fe8                        __exidx_start = .
 
 .ARM.exidx
  *(.ARM.exidx* .gnu.linkonce.armexidx.*)
-                0x10007108                        __exidx_end = .
-                0x10007108                        . = ALIGN (0x4)
-                0x10007108                        __binary_info_start = .
+                0x10006fe8                        __exidx_end = .
+                0x10006fe8                        . = ALIGN (0x4)
+                0x10006fe8                        __binary_info_start = .
 
-.binary_info    0x10007108       0x1c
+.binary_info    0x10006fe8       0x1c
  *(.binary_info.keep.*)
  .binary_info.keep.__bi_ptr81
-                0x10007108        0x4 CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/pico_standard_link/binary_info.c.obj
+                0x10006fe8        0x4 CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/pico_standard_link/binary_info.c.obj
  .binary_info.keep.__bi_ptr75
-                0x1000710c        0x4 CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/pico_standard_link/binary_info.c.obj
+                0x10006fec        0x4 CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/pico_standard_link/binary_info.c.obj
  .binary_info.keep.__bi_ptr50
-                0x10007110        0x4 CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/pico_standard_link/binary_info.c.obj
+                0x10006ff0        0x4 CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/pico_standard_link/binary_info.c.obj
  .binary_info.keep.__bi_ptr44
-                0x10007114        0x4 CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/pico_standard_link/binary_info.c.obj
+                0x10006ff4        0x4 CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/pico_standard_link/binary_info.c.obj
  .binary_info.keep.__bi_ptr38
-                0x10007118        0x4 CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/pico_standard_link/binary_info.c.obj
+                0x10006ff8        0x4 CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/pico_standard_link/binary_info.c.obj
  .binary_info.keep.__bi_ptr30
-                0x1000711c        0x4 CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/pico_standard_link/binary_info.c.obj
+                0x10006ffc        0x4 CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/pico_standard_link/binary_info.c.obj
  .binary_info.keep.__bi_ptr22
-                0x10007120        0x4 CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/pico_standard_link/binary_info.c.obj
+                0x10007000        0x4 CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/pico_standard_link/binary_info.c.obj
  *(.binary_info.*)
-                0x10007124                        __binary_info_end = .
+                0x10007004                        __binary_info_end = .
 
-.rel.dyn        0x10007124        0x0
- .rel.iplt      0x10007124        0x0 /Applications/ArmGNUToolchain/12.3.rel1/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/12.3.1/thumb/v6-m/nofp/crtbegin.o
-                0x10007124                        . = ALIGN (0x4)
+.rel.dyn        0x10007004        0x0
+ .rel.iplt      0x10007004        0x0 /Applications/ArmGNUToolchain/12.3.rel1/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/12.3.1/thumb/v6-m/nofp/crtbegin.o
+                0x10007004                        . = ALIGN (0x4)
 
 .ram_vector_table
                 0x20000000       0xc0
@@ -3363,7 +3359,7 @@ LOAD /Applications/ArmGNUToolchain/12.3.rel1/arm-none-eabi/bin/../lib/gcc/arm-no
                 0x20000000       0xc0 CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/pico_runtime/runtime.c.obj
                 0x20000000                ram_vector_table
 
-.data           0x200000c0      0x930 load address 0x10007124
+.data           0x200000c0      0x930 load address 0x10007004
                 0x200000c0                        __data_start__ = .
  *(vtable)
  *(.time_critical*)
@@ -3480,36 +3476,36 @@ LOAD /Applications/ArmGNUToolchain/12.3.rel1/arm-none-eabi/bin/../lib/gcc/arm-no
  *(.jcr)
                 0x200009f0                        . = ALIGN (0x4)
                 0x200009f0                        __data_end__ = .
-                0x10007124                        __etext = LOADADDR (.data)
+                0x10007004                        __etext = LOADADDR (.data)
 
 .tm_clone_table
-                0x200009f0        0x0 load address 0x10007a54
+                0x200009f0        0x0 load address 0x10007934
  .tm_clone_table
                 0x200009f0        0x0 /Applications/ArmGNUToolchain/12.3.rel1/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/12.3.1/thumb/v6-m/nofp/crtbegin.o
  .tm_clone_table
                 0x200009f0        0x0 /Applications/ArmGNUToolchain/12.3.rel1/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/12.3.1/thumb/v6-m/nofp/crtend.o
 
-.igot.plt       0x200009f0        0x0 load address 0x10007a54
+.igot.plt       0x200009f0        0x0 load address 0x10007934
  .igot.plt      0x200009f0        0x0 /Applications/ArmGNUToolchain/12.3.rel1/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/12.3.1/thumb/v6-m/nofp/crtbegin.o
 
 .uninitialized_data
-                0x200009f0        0x0 load address 0x10007a54
+                0x200009f0        0x0 load address 0x10007934
                 0x200009f0                        . = ALIGN (0x4)
  *(.uninitialized_data*)
 
-.scratch_x      0x20040000        0x0 load address 0x10007a54
+.scratch_x      0x20040000        0x0 load address 0x10007934
                 0x20040000                        __scratch_x_start__ = .
  *(.scratch_x.*)
                 0x20040000                        . = ALIGN (0x4)
                 0x20040000                        __scratch_x_end__ = .
-                0x10007a54                        __scratch_x_source__ = LOADADDR (.scratch_x)
+                0x10007934                        __scratch_x_source__ = LOADADDR (.scratch_x)
 
-.scratch_y      0x20041000        0x0 load address 0x10007a54
+.scratch_y      0x20041000        0x0 load address 0x10007934
                 0x20041000                        __scratch_y_start__ = .
  *(.scratch_y.*)
                 0x20041000                        . = ALIGN (0x4)
                 0x20041000                        __scratch_y_end__ = .
-                0x10007a54                        __scratch_y_source__ = LOADADDR (.scratch_y)
+                0x10007934                        __scratch_y_source__ = LOADADDR (.scratch_y)
 
 .bss            0x200009f0      0x778
                 0x200009f0                        . = ALIGN (0x4)
@@ -3596,8 +3592,8 @@ LOAD /Applications/ArmGNUToolchain/12.3.rel1/arm-none-eabi/bin/../lib/gcc/arm-no
  *(.stack*)
  .stack         0x20041000      0x800 CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/pico_standard_link/crt0.S.obj
 
-.flash_end      0x10007a54        0x0
-                0x10007a54                        PROVIDE (__flash_binary_end = .)
+.flash_end      0x10007934        0x0
+                0x10007934                        PROVIDE (__flash_binary_end = .)
                 0x20040000                        __StackLimit = (ORIGIN (RAM) + LENGTH (RAM))
                 0x20041000                        __StackOneTop = (ORIGIN (SCRATCH_X) + LENGTH (SCRATCH_X))
                 0x20042000                        __StackTop = (ORIGIN (SCRATCH_Y) + LENGTH (SCRATCH_Y))
@@ -3679,7 +3675,7 @@ LOAD CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/pico_fix/rp2040
 LOAD CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/hardware_i2c/i2c.c.obj
 LOAD CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/hardware_pio/pio.c.obj
 LOAD CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/hardware_adc/adc.c.obj
-LOAD /var/folders/4d/np5l_gk52g1gj0kk2fmsf50c0000gn/T//ccadHDg8.o
+LOAD /var/folders/4d/np5l_gk52g1gj0kk2fmsf50c0000gn/T//ccAnRAgs.o
 LOAD /Applications/ArmGNUToolchain/12.3.rel1/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libstdc++.a
 LOAD /Applications/ArmGNUToolchain/12.3.rel1/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libm.a
 START GROUP
@@ -3780,7 +3776,7 @@ LOAD linker stubs
  .ARM.attributes
                 0x00000642       0x2c CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/hardware_pio/pio.c.obj
  .ARM.attributes
-                0x0000066e       0x22 /var/folders/4d/np5l_gk52g1gj0kk2fmsf50c0000gn/T//ccadHDg8.o
+                0x0000066e       0x22 /var/folders/4d/np5l_gk52g1gj0kk2fmsf50c0000gn/T//ccAnRAgs.o
  .ARM.attributes
                 0x00000690       0x1e /Applications/ArmGNUToolchain/12.3.rel1/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/12.3.1/thumb/v6-m/nofp/libgcc.a(_dvmd_tls.o)
  .ARM.attributes
@@ -3798,21 +3794,19 @@ LOAD linker stubs
  .ARM.attributes
                 0x000007b6       0x2c /Applications/ArmGNUToolchain/12.3.rel1/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libg.a(libc_a-sysconf.o)
  .ARM.attributes
-                0x000007e2       0x1b /Applications/ArmGNUToolchain/12.3.rel1/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libg.a(libc_a-strcmp.o)
+                0x000007e2       0x2c /Applications/ArmGNUToolchain/12.3.rel1/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libg.a(libc_a-lock.o)
  .ARM.attributes
-                0x000007fd       0x2c /Applications/ArmGNUToolchain/12.3.rel1/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libg.a(libc_a-lock.o)
+                0x0000080e       0x2c /Applications/ArmGNUToolchain/12.3.rel1/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libg.a(libc_a-strlen-stub.o)
  .ARM.attributes
-                0x00000829       0x2c /Applications/ArmGNUToolchain/12.3.rel1/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libg.a(libc_a-strlen-stub.o)
+                0x0000083a       0x2c /Applications/ArmGNUToolchain/12.3.rel1/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libg.a(libc_a-ctype_.o)
  .ARM.attributes
-                0x00000855       0x2c /Applications/ArmGNUToolchain/12.3.rel1/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libg.a(libc_a-ctype_.o)
+                0x00000866       0x2c /Applications/ArmGNUToolchain/12.3.rel1/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libg.a(libc_a-freer.o)
  .ARM.attributes
-                0x00000881       0x2c /Applications/ArmGNUToolchain/12.3.rel1/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libg.a(libc_a-freer.o)
+                0x00000892       0x2c /Applications/ArmGNUToolchain/12.3.rel1/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libg.a(libc_a-findfp.o)
  .ARM.attributes
-                0x000008ad       0x2c /Applications/ArmGNUToolchain/12.3.rel1/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libg.a(libc_a-findfp.o)
+                0x000008be       0x2c /Applications/ArmGNUToolchain/12.3.rel1/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libg.a(libc_a-reent.o)
  .ARM.attributes
-                0x000008d9       0x2c /Applications/ArmGNUToolchain/12.3.rel1/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libg.a(libc_a-reent.o)
- .ARM.attributes
-                0x00000905       0x2c /Applications/ArmGNUToolchain/12.3.rel1/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/12.3.1/thumb/v6-m/nofp/crtend.o
+                0x000008ea       0x2c /Applications/ArmGNUToolchain/12.3.rel1/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/12.3.1/thumb/v6-m/nofp/crtend.o
 
 .comment        0x00000000       0x45
  .comment       0x00000000       0x45 CMakeFiles/main.dir/main.c.obj
@@ -3845,140 +3839,140 @@ LOAD linker stubs
  .comment       0x00000045       0x46 CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/hardware_i2c/i2c.c.obj
  .comment       0x00000045       0x46 CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/hardware_pio/pio.c.obj
 
-.debug_info     0x00000000    0x1a5b1
- .debug_info    0x00000000     0x24bf CMakeFiles/main.dir/main.c.obj
- .debug_info    0x000024bf     0x1073 CMakeFiles/main.dir/nec_receive.c.obj
- .debug_info    0x00003532     0x17f5 CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/hardware_gpio/gpio.c.obj
- .debug_info    0x00004d27      0x1fb CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/pico_platform/platform.c.obj
- .debug_info    0x00004f22      0x69a CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/hardware_claim/claim.c.obj
- .debug_info    0x000055bc      0x5db CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/hardware_sync/sync.c.obj
- .debug_info    0x00005b97     0x1c0b CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/hardware_irq/irq.c.obj
- .debug_info    0x000077a2      0x1a3 CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/common/pico_sync/lock_core.c.obj
- .debug_info    0x00007945     0x1d25 CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/common/pico_sync/mutex.c.obj
- .debug_info    0x0000966a     0x33e9 CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/common/pico_time/time.c.obj
- .debug_info    0x0000ca53     0x142a CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/hardware_timer/timer.c.obj
- .debug_info    0x0000de7d      0xe63 CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/common/pico_util/pheap.c.obj
- .debug_info    0x0000ece0      0xfe7 CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/hardware_clocks/clocks.c.obj
- .debug_info    0x0000fcc7      0x505 CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/hardware_pll/pll.c.obj
- .debug_info    0x000101cc      0x4c5 CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/hardware_watchdog/watchdog.c.obj
- .debug_info    0x00010691      0x1c7 CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/hardware_xosc/xosc.c.obj
- .debug_info    0x00010858      0xf17 CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/pico_runtime/runtime.c.obj
- .debug_info    0x0001176f     0x19a2 CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/pico_printf/printf.c.obj
- .debug_info    0x00013111       0x23 CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/pico_bit_ops/bit_ops_aeabi.S.obj
- .debug_info    0x00013134      0x325 CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/pico_bootrom/bootrom.c.obj
- .debug_info    0x00013459       0x23 CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/pico_divider/divider.S.obj
- .debug_info    0x0001347c       0x23 CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/pico_double/double_aeabi.S.obj
- .debug_info    0x0001349f      0x33b CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/pico_double/double_init_rom.c.obj
- .debug_info    0x000137da       0x23 CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/pico_double/double_v1_rom_shim.S.obj
- .debug_info    0x000137fd       0x24 CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/pico_int64_ops/pico_int64_ops_aeabi.S.obj
- .debug_info    0x00013821       0x23 CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/pico_float/float_aeabi.S.obj
- .debug_info    0x00013844      0x34f CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/pico_float/float_init_rom.c.obj
- .debug_info    0x00013b93       0x23 CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/pico_float/float_v1_rom_shim.S.obj
- .debug_info    0x00013bb6      0x308 CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/pico_malloc/pico_malloc.c.obj
- .debug_info    0x00013ebe       0x23 CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/pico_mem_ops/mem_ops_aeabi.S.obj
- .debug_info    0x00013ee1       0x23 CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/pico_standard_link/crt0.S.obj
- .debug_info    0x00013f04      0x2b8 CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/pico_standard_link/binary_info.c.obj
- .debug_info    0x000141bc     0x1729 CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/pico_stdio/stdio.c.obj
- .debug_info    0x000158e5      0x275 CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/pico_unique_id/unique_id.c.obj
- .debug_info    0x00015b5a     0x127c CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/hardware_flash/flash.c.obj
- .debug_info    0x00016dd6     0x15ac CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/hardware_i2c/i2c.c.obj
- .debug_info    0x00018382     0x222f CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/hardware_pio/pio.c.obj
+.debug_info     0x00000000    0x1a62f
+ .debug_info    0x00000000     0x253d CMakeFiles/main.dir/main.c.obj
+ .debug_info    0x0000253d     0x1073 CMakeFiles/main.dir/nec_receive.c.obj
+ .debug_info    0x000035b0     0x17f5 CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/hardware_gpio/gpio.c.obj
+ .debug_info    0x00004da5      0x1fb CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/pico_platform/platform.c.obj
+ .debug_info    0x00004fa0      0x69a CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/hardware_claim/claim.c.obj
+ .debug_info    0x0000563a      0x5db CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/hardware_sync/sync.c.obj
+ .debug_info    0x00005c15     0x1c0b CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/hardware_irq/irq.c.obj
+ .debug_info    0x00007820      0x1a3 CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/common/pico_sync/lock_core.c.obj
+ .debug_info    0x000079c3     0x1d25 CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/common/pico_sync/mutex.c.obj
+ .debug_info    0x000096e8     0x33e9 CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/common/pico_time/time.c.obj
+ .debug_info    0x0000cad1     0x142a CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/hardware_timer/timer.c.obj
+ .debug_info    0x0000defb      0xe63 CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/common/pico_util/pheap.c.obj
+ .debug_info    0x0000ed5e      0xfe7 CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/hardware_clocks/clocks.c.obj
+ .debug_info    0x0000fd45      0x505 CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/hardware_pll/pll.c.obj
+ .debug_info    0x0001024a      0x4c5 CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/hardware_watchdog/watchdog.c.obj
+ .debug_info    0x0001070f      0x1c7 CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/hardware_xosc/xosc.c.obj
+ .debug_info    0x000108d6      0xf17 CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/pico_runtime/runtime.c.obj
+ .debug_info    0x000117ed     0x19a2 CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/pico_printf/printf.c.obj
+ .debug_info    0x0001318f       0x23 CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/pico_bit_ops/bit_ops_aeabi.S.obj
+ .debug_info    0x000131b2      0x325 CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/pico_bootrom/bootrom.c.obj
+ .debug_info    0x000134d7       0x23 CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/pico_divider/divider.S.obj
+ .debug_info    0x000134fa       0x23 CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/pico_double/double_aeabi.S.obj
+ .debug_info    0x0001351d      0x33b CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/pico_double/double_init_rom.c.obj
+ .debug_info    0x00013858       0x23 CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/pico_double/double_v1_rom_shim.S.obj
+ .debug_info    0x0001387b       0x24 CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/pico_int64_ops/pico_int64_ops_aeabi.S.obj
+ .debug_info    0x0001389f       0x23 CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/pico_float/float_aeabi.S.obj
+ .debug_info    0x000138c2      0x34f CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/pico_float/float_init_rom.c.obj
+ .debug_info    0x00013c11       0x23 CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/pico_float/float_v1_rom_shim.S.obj
+ .debug_info    0x00013c34      0x308 CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/pico_malloc/pico_malloc.c.obj
+ .debug_info    0x00013f3c       0x23 CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/pico_mem_ops/mem_ops_aeabi.S.obj
+ .debug_info    0x00013f5f       0x23 CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/pico_standard_link/crt0.S.obj
+ .debug_info    0x00013f82      0x2b8 CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/pico_standard_link/binary_info.c.obj
+ .debug_info    0x0001423a     0x1729 CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/pico_stdio/stdio.c.obj
+ .debug_info    0x00015963      0x275 CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/pico_unique_id/unique_id.c.obj
+ .debug_info    0x00015bd8     0x127c CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/hardware_flash/flash.c.obj
+ .debug_info    0x00016e54     0x15ac CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/hardware_i2c/i2c.c.obj
+ .debug_info    0x00018400     0x222f CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/hardware_pio/pio.c.obj
 
-.debug_abbrev   0x00000000     0x5472
- .debug_abbrev  0x00000000      0x545 CMakeFiles/main.dir/main.c.obj
- .debug_abbrev  0x00000545      0x40a CMakeFiles/main.dir/nec_receive.c.obj
- .debug_abbrev  0x0000094f      0x3a6 CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/hardware_gpio/gpio.c.obj
- .debug_abbrev  0x00000cf5       0xf8 CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/pico_platform/platform.c.obj
- .debug_abbrev  0x00000ded      0x2ce CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/hardware_claim/claim.c.obj
- .debug_abbrev  0x000010bb      0x249 CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/hardware_sync/sync.c.obj
- .debug_abbrev  0x00001304      0x500 CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/hardware_irq/irq.c.obj
- .debug_abbrev  0x00001804      0x116 CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/common/pico_sync/lock_core.c.obj
- .debug_abbrev  0x0000191a      0x3e8 CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/common/pico_sync/mutex.c.obj
- .debug_abbrev  0x00001d02      0x5c3 CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/common/pico_time/time.c.obj
- .debug_abbrev  0x000022c5      0x3d5 CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/hardware_timer/timer.c.obj
- .debug_abbrev  0x0000269a      0x290 CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/common/pico_util/pheap.c.obj
- .debug_abbrev  0x0000292a      0x434 CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/hardware_clocks/clocks.c.obj
- .debug_abbrev  0x00002d5e      0x1e7 CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/hardware_pll/pll.c.obj
- .debug_abbrev  0x00002f45      0x1a8 CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/hardware_watchdog/watchdog.c.obj
- .debug_abbrev  0x000030ed      0x10c CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/hardware_xosc/xosc.c.obj
- .debug_abbrev  0x000031f9      0x530 CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/pico_runtime/runtime.c.obj
- .debug_abbrev  0x00003729      0x38a CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/pico_printf/printf.c.obj
- .debug_abbrev  0x00003ab3       0x12 CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/pico_bit_ops/bit_ops_aeabi.S.obj
- .debug_abbrev  0x00003ac5      0x167 CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/pico_bootrom/bootrom.c.obj
- .debug_abbrev  0x00003c2c       0x12 CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/pico_divider/divider.S.obj
- .debug_abbrev  0x00003c3e       0x12 CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/pico_double/double_aeabi.S.obj
- .debug_abbrev  0x00003c50      0x1c3 CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/pico_double/double_init_rom.c.obj
- .debug_abbrev  0x00003e13       0x12 CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/pico_double/double_v1_rom_shim.S.obj
- .debug_abbrev  0x00003e25       0x14 CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/pico_int64_ops/pico_int64_ops_aeabi.S.obj
- .debug_abbrev  0x00003e39       0x12 CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/pico_float/float_aeabi.S.obj
- .debug_abbrev  0x00003e4b      0x1c6 CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/pico_float/float_init_rom.c.obj
- .debug_abbrev  0x00004011       0x12 CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/pico_float/float_v1_rom_shim.S.obj
- .debug_abbrev  0x00004023      0x163 CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/pico_malloc/pico_malloc.c.obj
- .debug_abbrev  0x00004186       0x12 CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/pico_mem_ops/mem_ops_aeabi.S.obj
- .debug_abbrev  0x00004198       0x12 CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/pico_standard_link/crt0.S.obj
- .debug_abbrev  0x000041aa       0xb8 CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/pico_standard_link/binary_info.c.obj
- .debug_abbrev  0x00004262      0x467 CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/pico_stdio/stdio.c.obj
- .debug_abbrev  0x000046c9      0x181 CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/pico_unique_id/unique_id.c.obj
- .debug_abbrev  0x0000484a      0x2bd CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/hardware_flash/flash.c.obj
- .debug_abbrev  0x00004b07      0x4a8 CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/hardware_i2c/i2c.c.obj
- .debug_abbrev  0x00004faf      0x4c3 CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/hardware_pio/pio.c.obj
+.debug_abbrev   0x00000000     0x5476
+ .debug_abbrev  0x00000000      0x549 CMakeFiles/main.dir/main.c.obj
+ .debug_abbrev  0x00000549      0x40a CMakeFiles/main.dir/nec_receive.c.obj
+ .debug_abbrev  0x00000953      0x3a6 CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/hardware_gpio/gpio.c.obj
+ .debug_abbrev  0x00000cf9       0xf8 CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/pico_platform/platform.c.obj
+ .debug_abbrev  0x00000df1      0x2ce CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/hardware_claim/claim.c.obj
+ .debug_abbrev  0x000010bf      0x249 CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/hardware_sync/sync.c.obj
+ .debug_abbrev  0x00001308      0x500 CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/hardware_irq/irq.c.obj
+ .debug_abbrev  0x00001808      0x116 CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/common/pico_sync/lock_core.c.obj
+ .debug_abbrev  0x0000191e      0x3e8 CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/common/pico_sync/mutex.c.obj
+ .debug_abbrev  0x00001d06      0x5c3 CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/common/pico_time/time.c.obj
+ .debug_abbrev  0x000022c9      0x3d5 CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/hardware_timer/timer.c.obj
+ .debug_abbrev  0x0000269e      0x290 CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/common/pico_util/pheap.c.obj
+ .debug_abbrev  0x0000292e      0x434 CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/hardware_clocks/clocks.c.obj
+ .debug_abbrev  0x00002d62      0x1e7 CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/hardware_pll/pll.c.obj
+ .debug_abbrev  0x00002f49      0x1a8 CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/hardware_watchdog/watchdog.c.obj
+ .debug_abbrev  0x000030f1      0x10c CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/hardware_xosc/xosc.c.obj
+ .debug_abbrev  0x000031fd      0x530 CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/pico_runtime/runtime.c.obj
+ .debug_abbrev  0x0000372d      0x38a CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/pico_printf/printf.c.obj
+ .debug_abbrev  0x00003ab7       0x12 CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/pico_bit_ops/bit_ops_aeabi.S.obj
+ .debug_abbrev  0x00003ac9      0x167 CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/pico_bootrom/bootrom.c.obj
+ .debug_abbrev  0x00003c30       0x12 CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/pico_divider/divider.S.obj
+ .debug_abbrev  0x00003c42       0x12 CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/pico_double/double_aeabi.S.obj
+ .debug_abbrev  0x00003c54      0x1c3 CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/pico_double/double_init_rom.c.obj
+ .debug_abbrev  0x00003e17       0x12 CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/pico_double/double_v1_rom_shim.S.obj
+ .debug_abbrev  0x00003e29       0x14 CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/pico_int64_ops/pico_int64_ops_aeabi.S.obj
+ .debug_abbrev  0x00003e3d       0x12 CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/pico_float/float_aeabi.S.obj
+ .debug_abbrev  0x00003e4f      0x1c6 CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/pico_float/float_init_rom.c.obj
+ .debug_abbrev  0x00004015       0x12 CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/pico_float/float_v1_rom_shim.S.obj
+ .debug_abbrev  0x00004027      0x163 CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/pico_malloc/pico_malloc.c.obj
+ .debug_abbrev  0x0000418a       0x12 CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/pico_mem_ops/mem_ops_aeabi.S.obj
+ .debug_abbrev  0x0000419c       0x12 CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/pico_standard_link/crt0.S.obj
+ .debug_abbrev  0x000041ae       0xb8 CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/pico_standard_link/binary_info.c.obj
+ .debug_abbrev  0x00004266      0x467 CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/pico_stdio/stdio.c.obj
+ .debug_abbrev  0x000046cd      0x181 CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/pico_unique_id/unique_id.c.obj
+ .debug_abbrev  0x0000484e      0x2bd CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/hardware_flash/flash.c.obj
+ .debug_abbrev  0x00004b0b      0x4a8 CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/hardware_i2c/i2c.c.obj
+ .debug_abbrev  0x00004fb3      0x4c3 CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/hardware_pio/pio.c.obj
 
 .debug_loclists
-                0x00000000     0xa808
+                0x00000000     0xaa4e
  .debug_loclists
-                0x00000000      0xd13 CMakeFiles/main.dir/main.c.obj
+                0x00000000      0xf59 CMakeFiles/main.dir/main.c.obj
  .debug_loclists
-                0x00000d13      0x48b CMakeFiles/main.dir/nec_receive.c.obj
+                0x00000f59      0x48b CMakeFiles/main.dir/nec_receive.c.obj
  .debug_loclists
-                0x0000119e      0x9c2 CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/hardware_gpio/gpio.c.obj
+                0x000013e4      0x9c2 CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/hardware_gpio/gpio.c.obj
  .debug_loclists
-                0x00001b60       0x9f CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/pico_platform/platform.c.obj
+                0x00001da6       0x9f CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/pico_platform/platform.c.obj
  .debug_loclists
-                0x00001bff      0x27b CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/hardware_claim/claim.c.obj
+                0x00001e45      0x27b CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/hardware_claim/claim.c.obj
  .debug_loclists
-                0x00001e7a      0x157 CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/hardware_sync/sync.c.obj
+                0x000020c0      0x157 CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/hardware_sync/sync.c.obj
  .debug_loclists
-                0x00001fd1      0xc84 CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/hardware_irq/irq.c.obj
+                0x00002217      0xc84 CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/hardware_irq/irq.c.obj
  .debug_loclists
-                0x00002c55       0x4a CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/common/pico_sync/lock_core.c.obj
+                0x00002e9b       0x4a CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/common/pico_sync/lock_core.c.obj
  .debug_loclists
-                0x00002c9f      0x9bf CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/common/pico_sync/mutex.c.obj
+                0x00002ee5      0x9bf CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/common/pico_sync/mutex.c.obj
  .debug_loclists
-                0x0000365e     0x12c0 CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/common/pico_time/time.c.obj
+                0x000038a4     0x12c0 CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/common/pico_time/time.c.obj
  .debug_loclists
-                0x0000491e      0x63d CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/hardware_timer/timer.c.obj
+                0x00004b64      0x63d CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/hardware_timer/timer.c.obj
  .debug_loclists
-                0x00004f5b      0x690 CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/common/pico_util/pheap.c.obj
+                0x000051a1      0x690 CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/common/pico_util/pheap.c.obj
  .debug_loclists
-                0x000055eb      0x502 CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/hardware_clocks/clocks.c.obj
+                0x00005831      0x502 CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/hardware_clocks/clocks.c.obj
  .debug_loclists
-                0x00005aed      0x1f0 CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/hardware_pll/pll.c.obj
+                0x00005d33      0x1f0 CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/hardware_pll/pll.c.obj
  .debug_loclists
-                0x00005cdd      0x1c7 CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/hardware_watchdog/watchdog.c.obj
+                0x00005f23      0x1c7 CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/hardware_watchdog/watchdog.c.obj
  .debug_loclists
-                0x00005ea4       0x48 CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/hardware_xosc/xosc.c.obj
+                0x000060ea       0x48 CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/hardware_xosc/xosc.c.obj
  .debug_loclists
-                0x00005eec      0x373 CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/pico_runtime/runtime.c.obj
+                0x00006132      0x373 CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/pico_runtime/runtime.c.obj
  .debug_loclists
-                0x0000625f     0x1640 CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/pico_printf/printf.c.obj
+                0x000064a5     0x1640 CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/pico_printf/printf.c.obj
  .debug_loclists
-                0x0000789f      0x12f CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/pico_bootrom/bootrom.c.obj
+                0x00007ae5      0x12f CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/pico_bootrom/bootrom.c.obj
  .debug_loclists
-                0x000079ce       0x41 CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/pico_double/double_init_rom.c.obj
+                0x00007c14       0x41 CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/pico_double/double_init_rom.c.obj
  .debug_loclists
-                0x00007a0f       0x4f CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/pico_float/float_init_rom.c.obj
+                0x00007c55       0x4f CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/pico_float/float_init_rom.c.obj
  .debug_loclists
-                0x00007a5e      0x12a CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/pico_malloc/pico_malloc.c.obj
+                0x00007ca4      0x12a CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/pico_malloc/pico_malloc.c.obj
  .debug_loclists
-                0x00007b88      0x7d6 CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/pico_stdio/stdio.c.obj
+                0x00007dce      0x7d6 CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/pico_stdio/stdio.c.obj
  .debug_loclists
-                0x0000835e       0xa5 CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/pico_unique_id/unique_id.c.obj
+                0x000085a4       0xa5 CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/pico_unique_id/unique_id.c.obj
  .debug_loclists
-                0x00008403      0x63b CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/hardware_flash/flash.c.obj
+                0x00008649      0x63b CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/hardware_flash/flash.c.obj
  .debug_loclists
-                0x00008a3e      0xc21 CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/hardware_i2c/i2c.c.obj
+                0x00008c84      0xc21 CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/hardware_i2c/i2c.c.obj
  .debug_loclists
-                0x0000965f     0x11a9 CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/hardware_pio/pio.c.obj
+                0x000098a5     0x11a9 CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/hardware_pio/pio.c.obj
 
 .debug_aranges  0x00000000     0x1198
  .debug_aranges
@@ -4057,194 +4051,194 @@ LOAD linker stubs
                 0x000010d8       0xc0 CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/hardware_pio/pio.c.obj
 
 .debug_rnglists
-                0x00000000      0xff1
+                0x00000000     0x1018
  .debug_rnglists
-                0x00000000      0x12d CMakeFiles/main.dir/main.c.obj
+                0x00000000      0x154 CMakeFiles/main.dir/main.c.obj
  .debug_rnglists
-                0x0000012d       0x4c CMakeFiles/main.dir/nec_receive.c.obj
+                0x00000154       0x4c CMakeFiles/main.dir/nec_receive.c.obj
  .debug_rnglists
-                0x00000179       0xec CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/hardware_gpio/gpio.c.obj
+                0x000001a0       0xec CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/hardware_gpio/gpio.c.obj
  .debug_rnglists
-                0x00000265       0x19 CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/pico_platform/platform.c.obj
+                0x0000028c       0x19 CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/pico_platform/platform.c.obj
  .debug_rnglists
-                0x0000027e       0x31 CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/hardware_claim/claim.c.obj
+                0x000002a5       0x31 CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/hardware_claim/claim.c.obj
  .debug_rnglists
-                0x000002af       0x3d CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/hardware_sync/sync.c.obj
+                0x000002d6       0x3d CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/hardware_sync/sync.c.obj
  .debug_rnglists
-                0x000002ec       0xf0 CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/hardware_irq/irq.c.obj
+                0x00000313       0xf0 CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/hardware_irq/irq.c.obj
  .debug_rnglists
-                0x000003dc       0x13 CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/common/pico_sync/lock_core.c.obj
+                0x00000403       0x13 CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/common/pico_sync/lock_core.c.obj
  .debug_rnglists
-                0x000003ef       0xcf CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/common/pico_sync/mutex.c.obj
+                0x00000416       0xcf CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/common/pico_sync/mutex.c.obj
  .debug_rnglists
-                0x000004be      0x17a CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/common/pico_time/time.c.obj
+                0x000004e5      0x17a CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/common/pico_time/time.c.obj
  .debug_rnglists
-                0x00000638       0x6a CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/hardware_timer/timer.c.obj
+                0x0000065f       0x6a CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/hardware_timer/timer.c.obj
  .debug_rnglists
-                0x000006a2       0x8e CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/common/pico_util/pheap.c.obj
+                0x000006c9       0x8e CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/common/pico_util/pheap.c.obj
  .debug_rnglists
-                0x00000730       0x51 CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/hardware_clocks/clocks.c.obj
+                0x00000757       0x51 CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/hardware_clocks/clocks.c.obj
  .debug_rnglists
-                0x00000781       0x1a CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/hardware_pll/pll.c.obj
+                0x000007a8       0x1a CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/hardware_pll/pll.c.obj
  .debug_rnglists
-                0x0000079b       0x3d CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/hardware_watchdog/watchdog.c.obj
+                0x000007c2       0x3d CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/hardware_watchdog/watchdog.c.obj
  .debug_rnglists
-                0x000007d8       0x1f CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/hardware_xosc/xosc.c.obj
+                0x000007ff       0x1f CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/hardware_xosc/xosc.c.obj
  .debug_rnglists
-                0x000007f7       0x7a CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/pico_runtime/runtime.c.obj
+                0x0000081e       0x7a CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/pico_runtime/runtime.c.obj
  .debug_rnglists
-                0x00000871       0xc2 CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/pico_printf/printf.c.obj
+                0x00000898       0xc2 CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/pico_printf/printf.c.obj
  .debug_rnglists
-                0x00000933       0x49 CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/pico_bit_ops/bit_ops_aeabi.S.obj
+                0x0000095a       0x49 CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/pico_bit_ops/bit_ops_aeabi.S.obj
  .debug_rnglists
-                0x0000097c       0x2b CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/pico_bootrom/bootrom.c.obj
+                0x000009a3       0x2b CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/pico_bootrom/bootrom.c.obj
  .debug_rnglists
-                0x000009a7       0x2c CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/pico_divider/divider.S.obj
+                0x000009ce       0x2c CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/pico_divider/divider.S.obj
  .debug_rnglists
-                0x000009d3       0xed CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/pico_double/double_aeabi.S.obj
+                0x000009fa       0xed CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/pico_double/double_aeabi.S.obj
  .debug_rnglists
-                0x00000ac0       0x21 CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/pico_double/double_init_rom.c.obj
+                0x00000ae7       0x21 CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/pico_double/double_init_rom.c.obj
  .debug_rnglists
-                0x00000ae1       0x99 CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/pico_double/double_v1_rom_shim.S.obj
+                0x00000b08       0x99 CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/pico_double/double_v1_rom_shim.S.obj
  .debug_rnglists
-                0x00000b7a       0xdf CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/pico_float/float_aeabi.S.obj
+                0x00000ba1       0xdf CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/pico_float/float_aeabi.S.obj
  .debug_rnglists
-                0x00000c59       0x20 CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/pico_float/float_init_rom.c.obj
+                0x00000c80       0x20 CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/pico_float/float_init_rom.c.obj
  .debug_rnglists
-                0x00000c79       0x38 CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/pico_float/float_v1_rom_shim.S.obj
+                0x00000ca0       0x38 CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/pico_float/float_v1_rom_shim.S.obj
  .debug_rnglists
-                0x00000cb1       0x2b CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/pico_malloc/pico_malloc.c.obj
+                0x00000cd8       0x2b CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/pico_malloc/pico_malloc.c.obj
  .debug_rnglists
-                0x00000cdc       0x25 CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/pico_mem_ops/mem_ops_aeabi.S.obj
+                0x00000d03       0x25 CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/pico_mem_ops/mem_ops_aeabi.S.obj
  .debug_rnglists
-                0x00000d01       0x1b CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/pico_standard_link/crt0.S.obj
+                0x00000d28       0x1b CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/pico_standard_link/crt0.S.obj
  .debug_rnglists
-                0x00000d1c      0x117 CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/pico_stdio/stdio.c.obj
+                0x00000d43      0x117 CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/pico_stdio/stdio.c.obj
  .debug_rnglists
-                0x00000e33       0x2b CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/pico_unique_id/unique_id.c.obj
+                0x00000e5a       0x2b CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/pico_unique_id/unique_id.c.obj
  .debug_rnglists
-                0x00000e5e       0x46 CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/hardware_flash/flash.c.obj
+                0x00000e85       0x46 CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/hardware_flash/flash.c.obj
  .debug_rnglists
-                0x00000ea4       0x8d CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/hardware_i2c/i2c.c.obj
+                0x00000ecb       0x8d CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/hardware_i2c/i2c.c.obj
  .debug_rnglists
-                0x00000f31       0xc0 CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/hardware_pio/pio.c.obj
+                0x00000f58       0xc0 CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/hardware_pio/pio.c.obj
 
-.debug_line     0x00000000    0x106d9
- .debug_line    0x00000000      0xfcf CMakeFiles/main.dir/main.c.obj
- .debug_line    0x00000fcf      0x636 CMakeFiles/main.dir/nec_receive.c.obj
- .debug_line    0x00001605      0xc11 CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/hardware_gpio/gpio.c.obj
- .debug_line    0x00002216      0x2a6 CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/pico_platform/platform.c.obj
- .debug_line    0x000024bc      0x477 CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/hardware_claim/claim.c.obj
- .debug_line    0x00002933      0x47d CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/hardware_sync/sync.c.obj
- .debug_line    0x00002db0      0xf72 CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/hardware_irq/irq.c.obj
- .debug_line    0x00003d22      0x234 CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/common/pico_sync/lock_core.c.obj
- .debug_line    0x00003f56      0xfda CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/common/pico_sync/mutex.c.obj
- .debug_line    0x00004f30     0x17c7 CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/common/pico_time/time.c.obj
- .debug_line    0x000066f7      0xb96 CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/hardware_timer/timer.c.obj
- .debug_line    0x0000728d      0x7c4 CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/common/pico_util/pheap.c.obj
- .debug_line    0x00007a51      0x9b8 CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/hardware_clocks/clocks.c.obj
- .debug_line    0x00008409      0x568 CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/hardware_pll/pll.c.obj
- .debug_line    0x00008971      0x456 CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/hardware_watchdog/watchdog.c.obj
- .debug_line    0x00008dc7      0x2ad CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/hardware_xosc/xosc.c.obj
- .debug_line    0x00009074      0xab7 CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/pico_runtime/runtime.c.obj
- .debug_line    0x00009b2b     0x12b3 CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/pico_printf/printf.c.obj
- .debug_line    0x0000adde      0x11a CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/pico_bit_ops/bit_ops_aeabi.S.obj
- .debug_line    0x0000aef8      0x271 CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/pico_bootrom/bootrom.c.obj
- .debug_line    0x0000b169      0x2a9 CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/pico_divider/divider.S.obj
- .debug_line    0x0000b412      0x3fa CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/pico_double/double_aeabi.S.obj
- .debug_line    0x0000b80c      0x3be CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/pico_double/double_init_rom.c.obj
- .debug_line    0x0000bbca      0x66c CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/pico_double/double_v1_rom_shim.S.obj
- .debug_line    0x0000c236       0x61 CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/pico_int64_ops/pico_int64_ops_aeabi.S.obj
- .debug_line    0x0000c297      0x3b2 CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/pico_float/float_aeabi.S.obj
- .debug_line    0x0000c649      0x3c1 CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/pico_float/float_init_rom.c.obj
- .debug_line    0x0000ca0a      0x198 CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/pico_float/float_v1_rom_shim.S.obj
- .debug_line    0x0000cba2      0x22a CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/pico_malloc/pico_malloc.c.obj
- .debug_line    0x0000cdcc       0x94 CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/pico_mem_ops/mem_ops_aeabi.S.obj
- .debug_line    0x0000ce60       0xa5 CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/pico_standard_link/crt0.S.obj
- .debug_line    0x0000cf05      0x1d4 CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/pico_standard_link/binary_info.c.obj
- .debug_line    0x0000d0d9      0xe7c CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/pico_stdio/stdio.c.obj
- .debug_line    0x0000df55      0x3c5 CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/pico_unique_id/unique_id.c.obj
- .debug_line    0x0000e31a      0x8d9 CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/hardware_flash/flash.c.obj
- .debug_line    0x0000ebf3      0xc42 CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/hardware_i2c/i2c.c.obj
- .debug_line    0x0000f835      0xea4 CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/hardware_pio/pio.c.obj
+.debug_line     0x00000000    0x107dd
+ .debug_line    0x00000000     0x10d3 CMakeFiles/main.dir/main.c.obj
+ .debug_line    0x000010d3      0x636 CMakeFiles/main.dir/nec_receive.c.obj
+ .debug_line    0x00001709      0xc11 CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/hardware_gpio/gpio.c.obj
+ .debug_line    0x0000231a      0x2a6 CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/pico_platform/platform.c.obj
+ .debug_line    0x000025c0      0x477 CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/hardware_claim/claim.c.obj
+ .debug_line    0x00002a37      0x47d CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/hardware_sync/sync.c.obj
+ .debug_line    0x00002eb4      0xf72 CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/hardware_irq/irq.c.obj
+ .debug_line    0x00003e26      0x234 CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/common/pico_sync/lock_core.c.obj
+ .debug_line    0x0000405a      0xfda CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/common/pico_sync/mutex.c.obj
+ .debug_line    0x00005034     0x17c7 CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/common/pico_time/time.c.obj
+ .debug_line    0x000067fb      0xb96 CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/hardware_timer/timer.c.obj
+ .debug_line    0x00007391      0x7c4 CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/common/pico_util/pheap.c.obj
+ .debug_line    0x00007b55      0x9b8 CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/hardware_clocks/clocks.c.obj
+ .debug_line    0x0000850d      0x568 CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/hardware_pll/pll.c.obj
+ .debug_line    0x00008a75      0x456 CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/hardware_watchdog/watchdog.c.obj
+ .debug_line    0x00008ecb      0x2ad CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/hardware_xosc/xosc.c.obj
+ .debug_line    0x00009178      0xab7 CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/pico_runtime/runtime.c.obj
+ .debug_line    0x00009c2f     0x12b3 CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/pico_printf/printf.c.obj
+ .debug_line    0x0000aee2      0x11a CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/pico_bit_ops/bit_ops_aeabi.S.obj
+ .debug_line    0x0000affc      0x271 CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/pico_bootrom/bootrom.c.obj
+ .debug_line    0x0000b26d      0x2a9 CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/pico_divider/divider.S.obj
+ .debug_line    0x0000b516      0x3fa CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/pico_double/double_aeabi.S.obj
+ .debug_line    0x0000b910      0x3be CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/pico_double/double_init_rom.c.obj
+ .debug_line    0x0000bcce      0x66c CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/pico_double/double_v1_rom_shim.S.obj
+ .debug_line    0x0000c33a       0x61 CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/pico_int64_ops/pico_int64_ops_aeabi.S.obj
+ .debug_line    0x0000c39b      0x3b2 CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/pico_float/float_aeabi.S.obj
+ .debug_line    0x0000c74d      0x3c1 CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/pico_float/float_init_rom.c.obj
+ .debug_line    0x0000cb0e      0x198 CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/pico_float/float_v1_rom_shim.S.obj
+ .debug_line    0x0000cca6      0x22a CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/pico_malloc/pico_malloc.c.obj
+ .debug_line    0x0000ced0       0x94 CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/pico_mem_ops/mem_ops_aeabi.S.obj
+ .debug_line    0x0000cf64       0xa5 CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/pico_standard_link/crt0.S.obj
+ .debug_line    0x0000d009      0x1d4 CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/pico_standard_link/binary_info.c.obj
+ .debug_line    0x0000d1dd      0xe7c CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/pico_stdio/stdio.c.obj
+ .debug_line    0x0000e059      0x3c5 CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/pico_unique_id/unique_id.c.obj
+ .debug_line    0x0000e41e      0x8d9 CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/hardware_flash/flash.c.obj
+ .debug_line    0x0000ecf7      0xc42 CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/hardware_i2c/i2c.c.obj
+ .debug_line    0x0000f939      0xea4 CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/hardware_pio/pio.c.obj
 
-.debug_str      0x00000000     0x4762
- .debug_str     0x00000000      0x997 CMakeFiles/main.dir/main.c.obj
-                                0xa86 (size before relaxing)
- .debug_str     0x00000997      0x425 CMakeFiles/main.dir/nec_receive.c.obj
+.debug_str      0x00000000     0x4756
+ .debug_str     0x00000000      0x98b CMakeFiles/main.dir/main.c.obj
+                                0xa78 (size before relaxing)
+ .debug_str     0x0000098b      0x425 CMakeFiles/main.dir/nec_receive.c.obj
                                 0x812 (size before relaxing)
- .debug_str     0x00000dbc      0x519 CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/hardware_gpio/gpio.c.obj
+ .debug_str     0x00000db0      0x519 CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/hardware_gpio/gpio.c.obj
                                 0x9f7 (size before relaxing)
- .debug_str     0x000012d5       0x80 CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/pico_platform/platform.c.obj
+ .debug_str     0x000012c9       0x80 CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/pico_platform/platform.c.obj
                                 0x21e (size before relaxing)
- .debug_str     0x00001355      0x1bb CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/hardware_claim/claim.c.obj
+ .debug_str     0x00001349      0x1bb CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/hardware_claim/claim.c.obj
                                 0x362 (size before relaxing)
- .debug_str     0x00001510       0xeb CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/hardware_sync/sync.c.obj
+ .debug_str     0x00001504       0xeb CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/hardware_sync/sync.c.obj
                                 0x349 (size before relaxing)
- .debug_str     0x000015fb      0x432 CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/hardware_irq/irq.c.obj
+ .debug_str     0x000015ef      0x432 CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/hardware_irq/irq.c.obj
                                 0x817 (size before relaxing)
- .debug_str     0x00001a2d       0x5b CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/common/pico_sync/lock_core.c.obj
+ .debug_str     0x00001a21       0x5b CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/common/pico_sync/lock_core.c.obj
                                 0x1ff (size before relaxing)
- .debug_str     0x00001a88      0x25e CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/common/pico_sync/mutex.c.obj
+ .debug_str     0x00001a7c      0x25e CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/common/pico_sync/mutex.c.obj
                                 0x5f1 (size before relaxing)
- .debug_str     0x00001ce6      0x716 CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/common/pico_time/time.c.obj
+ .debug_str     0x00001cda      0x716 CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/common/pico_time/time.c.obj
                                 0xc74 (size before relaxing)
- .debug_str     0x000023fc      0x130 CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/hardware_timer/timer.c.obj
+ .debug_str     0x000023f0      0x130 CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/hardware_timer/timer.c.obj
                                 0x729 (size before relaxing)
- .debug_str     0x0000252c       0xe5 CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/common/pico_util/pheap.c.obj
+ .debug_str     0x00002520       0xe5 CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/common/pico_util/pheap.c.obj
                                 0x3ef (size before relaxing)
- .debug_str     0x00002611      0x2a6 CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/hardware_clocks/clocks.c.obj
+ .debug_str     0x00002605      0x2a6 CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/hardware_clocks/clocks.c.obj
                                 0x6c6 (size before relaxing)
- .debug_str     0x000028b7       0xc2 CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/hardware_pll/pll.c.obj
+ .debug_str     0x000028ab       0xc2 CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/hardware_pll/pll.c.obj
                                 0x2da (size before relaxing)
- .debug_str     0x00002979      0x117 CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/hardware_watchdog/watchdog.c.obj
+ .debug_str     0x0000296d      0x117 CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/hardware_watchdog/watchdog.c.obj
                                 0x320 (size before relaxing)
- .debug_str     0x00002a90       0x6a CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/hardware_xosc/xosc.c.obj
+ .debug_str     0x00002a84       0x6a CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/hardware_xosc/xosc.c.obj
                                 0x21d (size before relaxing)
- .debug_str     0x00002afa      0x2c4 CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/pico_runtime/runtime.c.obj
+ .debug_str     0x00002aee      0x2c4 CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/pico_runtime/runtime.c.obj
                                 0x7e0 (size before relaxing)
- .debug_str     0x00002dbe      0x246 CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/pico_printf/printf.c.obj
+ .debug_str     0x00002db2      0x246 CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/pico_printf/printf.c.obj
                                 0x47e (size before relaxing)
- .debug_str     0x00003004       0x54 CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/pico_bit_ops/bit_ops_aeabi.S.obj
+ .debug_str     0x00002ff8       0x54 CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/pico_bit_ops/bit_ops_aeabi.S.obj
                                  0x79 (size before relaxing)
- .debug_str     0x00003058       0xe0 CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/pico_bootrom/bootrom.c.obj
+ .debug_str     0x0000304c       0xe0 CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/pico_bootrom/bootrom.c.obj
                                 0x275 (size before relaxing)
- .debug_str     0x00003138       0x40 CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/pico_divider/divider.S.obj
+ .debug_str     0x0000312c       0x40 CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/pico_divider/divider.S.obj
                                  0x73 (size before relaxing)
- .debug_str     0x00003178       0x44 CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/pico_double/double_aeabi.S.obj
+ .debug_str     0x0000316c       0x44 CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/pico_double/double_aeabi.S.obj
                                  0x77 (size before relaxing)
- .debug_str     0x000031bc       0xbc CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/pico_double/double_init_rom.c.obj
+ .debug_str     0x000031b0       0xbc CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/pico_double/double_init_rom.c.obj
                                 0x2be (size before relaxing)
- .debug_str     0x00003278       0x4a CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/pico_double/double_v1_rom_shim.S.obj
+ .debug_str     0x0000326c       0x4a CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/pico_double/double_v1_rom_shim.S.obj
                                  0x7d (size before relaxing)
- .debug_str     0x000032c2       0x4f CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/pico_int64_ops/pico_int64_ops_aeabi.S.obj
+ .debug_str     0x000032b6       0x4f CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/pico_int64_ops/pico_int64_ops_aeabi.S.obj
                                  0x82 (size before relaxing)
- .debug_str     0x00003311       0x42 CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/pico_float/float_aeabi.S.obj
+ .debug_str     0x00003305       0x42 CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/pico_float/float_aeabi.S.obj
                                  0x75 (size before relaxing)
- .debug_str     0x00003353       0x80 CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/pico_float/float_init_rom.c.obj
+ .debug_str     0x00003347       0x80 CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/pico_float/float_init_rom.c.obj
                                 0x2ba (size before relaxing)
- .debug_str     0x000033d3       0x48 CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/pico_float/float_v1_rom_shim.S.obj
+ .debug_str     0x000033c7       0x48 CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/pico_float/float_v1_rom_shim.S.obj
                                  0x7b (size before relaxing)
- .debug_str     0x0000341b       0xbd CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/pico_malloc/pico_malloc.c.obj
+ .debug_str     0x0000340f       0xbd CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/pico_malloc/pico_malloc.c.obj
                                 0x22c (size before relaxing)
- .debug_str     0x000034d8       0x46 CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/pico_mem_ops/mem_ops_aeabi.S.obj
+ .debug_str     0x000034cc       0x46 CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/pico_mem_ops/mem_ops_aeabi.S.obj
                                  0x79 (size before relaxing)
- .debug_str     0x0000351e       0x43 CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/pico_standard_link/crt0.S.obj
+ .debug_str     0x00003512       0x43 CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/pico_standard_link/crt0.S.obj
                                  0x76 (size before relaxing)
- .debug_str     0x00003561      0x243 CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/pico_standard_link/binary_info.c.obj
+ .debug_str     0x00003555      0x243 CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/pico_standard_link/binary_info.c.obj
                                 0x3e0 (size before relaxing)
- .debug_str     0x000037a4      0x4ef CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/pico_stdio/stdio.c.obj
+ .debug_str     0x00003798      0x4ef CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/pico_stdio/stdio.c.obj
                                 0x9ca (size before relaxing)
- .debug_str     0x00003c93       0xdf CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/pico_unique_id/unique_id.c.obj
+ .debug_str     0x00003c87       0xdf CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/pico_unique_id/unique_id.c.obj
                                 0x271 (size before relaxing)
- .debug_str     0x00003d72      0x301 CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/hardware_flash/flash.c.obj
+ .debug_str     0x00003d66      0x301 CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/hardware_flash/flash.c.obj
                                 0x611 (size before relaxing)
- .debug_str     0x00004073      0x295 CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/hardware_i2c/i2c.c.obj
+ .debug_str     0x00004067      0x295 CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/hardware_i2c/i2c.c.obj
                                 0x919 (size before relaxing)
- .debug_str     0x00004308      0x45a CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/hardware_pio/pio.c.obj
+ .debug_str     0x000042fc      0x45a CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/hardware_pio/pio.c.obj
                                 0xa2b (size before relaxing)
 
-.debug_frame    0x00000000     0x2754
+.debug_frame    0x00000000     0x2734
  .debug_frame   0x00000000      0x240 CMakeFiles/main.dir/main.c.obj
  .debug_frame   0x00000240       0xbc CMakeFiles/main.dir/nec_receive.c.obj
  .debug_frame   0x000002fc      0x278 CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/hardware_gpio/gpio.c.obj
@@ -4278,16 +4272,15 @@ LOAD linker stubs
  .debug_frame   0x00002408       0x2c /Applications/ArmGNUToolchain/12.3.rel1/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libg.a(libc_a-sbrkr.o)
  .debug_frame   0x00002434       0x20 /Applications/ArmGNUToolchain/12.3.rel1/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libg.a(libc_a-errno.o)
  .debug_frame   0x00002454       0x28 /Applications/ArmGNUToolchain/12.3.rel1/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libg.a(libc_a-sysconf.o)
- .debug_frame   0x0000247c       0x20 /Applications/ArmGNUToolchain/12.3.rel1/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libg.a(libc_a-strcmp.o)
- .debug_frame   0x0000249c       0xb0 /Applications/ArmGNUToolchain/12.3.rel1/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libg.a(libc_a-lock.o)
- .debug_frame   0x0000254c       0x28 /Applications/ArmGNUToolchain/12.3.rel1/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libg.a(libc_a-strlen-stub.o)
- .debug_frame   0x00002574       0x20 /Applications/ArmGNUToolchain/12.3.rel1/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libg.a(libc_a-ctype_.o)
- .debug_frame   0x00002594       0x5c /Applications/ArmGNUToolchain/12.3.rel1/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libg.a(libc_a-freer.o)
- .debug_frame   0x000025f0      0x138 /Applications/ArmGNUToolchain/12.3.rel1/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libg.a(libc_a-findfp.o)
- .debug_frame   0x00002728       0x2c /Applications/ArmGNUToolchain/12.3.rel1/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libg.a(libc_a-reent.o)
+ .debug_frame   0x0000247c       0xb0 /Applications/ArmGNUToolchain/12.3.rel1/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libg.a(libc_a-lock.o)
+ .debug_frame   0x0000252c       0x28 /Applications/ArmGNUToolchain/12.3.rel1/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libg.a(libc_a-strlen-stub.o)
+ .debug_frame   0x00002554       0x20 /Applications/ArmGNUToolchain/12.3.rel1/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libg.a(libc_a-ctype_.o)
+ .debug_frame   0x00002574       0x5c /Applications/ArmGNUToolchain/12.3.rel1/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libg.a(libc_a-freer.o)
+ .debug_frame   0x000025d0      0x138 /Applications/ArmGNUToolchain/12.3.rel1/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libg.a(libc_a-findfp.o)
+ .debug_frame   0x00002708       0x2c /Applications/ArmGNUToolchain/12.3.rel1/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libg.a(libc_a-reent.o)
 
 .debug_line_str
-                0x00000000      0x3ec
+                0x00000000      0x304
  .debug_line_str
                 0x00000000       0x6b CMakeFiles/main.dir/Users/Nina/pico/pico-sdk/src/rp2_common/pico_bit_ops/bit_ops_aeabi.S.obj
  .debug_line_str
@@ -4316,5 +4309,3 @@ LOAD linker stubs
                                  0x68 (size before relaxing)
  .debug_line_str
                 0x00000232       0xd2 /Applications/ArmGNUToolchain/12.3.rel1/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/12.3.1/thumb/v6-m/nofp/libgcc.a(_dvmd_tls.o)
- .debug_line_str
-                0x00000304       0xe8 /Applications/ArmGNUToolchain/12.3.rel1/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libg.a(libc_a-strcmp.o)

@@ -45,7 +45,6 @@
 #include "hardware/adc.h"
 
 int Trs_KeyV(uint8_t data, int pos, uint8_t *buf);
-int get_input(int *input, uint8_t *buf);
 int check_input(int *input, int *pswd);
 
 void init_HW()
@@ -81,12 +80,7 @@ int main()
     init_HW();
 
     // Initialize render area for entire frame (SSD1306_WIDTH pixels by SSD1306_NUM_PAGES pages)
-    struct render_area frame_area = {
-        start_col : 0,
-        end_col : SSD1306_WIDTH - 1,
-        start_page : 0,
-        end_page : SSD1306_NUM_PAGES - 1
-    };
+
     calc_render_area_buflen(&frame_area);
 
     // zero the entire display
@@ -102,31 +96,21 @@ int main()
     sleep_ms(100);
 
     // Create Passwords
-    int pswd[2] = {1, 2};
-    int input[2] = {0};
+    int pswd[4] = {1, 2, 3, 4};
+    int input[4] = {0};
+
     while (true)
     {
-        // IR receive
-        int cnt = 0;
-
+        /* // IR receive
         while (!pio_sm_is_rx_fifo_empty(pio, rx_sm))
         {
             uint32_t rx_frame = pio_sm_get(pio, rx_sm);
 
             if (nec_decode_frame(rx_frame, &rx_address, &rx_data))
-            {
-                if (rx_data != remote_play)
-                    cnt++;
-                if (rx_data != remote_test)
-                    cnt++;
-                if (rx_data != remote_plus)
-                    cnt++;
-                if (rx_data != remote_minus)
-                    cnt++;
-                if (rx_data != remote_return)
-                    cnt++;
-            }
-        }
+                printf("\treceived: %02x, %02x\n", rx_address, rx_data);
+            else
+                printf("\treceived: %08x\n", rx_frame);
+        } */
 
         // Show Display
         render(buf, &frame_area);
@@ -146,13 +130,12 @@ int main()
         render(buf, &frame_area);
 
         // Prof's code
-        // get_input(input, buf);
-
-        input[cnt - 1] = Trs_KeyV(rx_data, cnt, buf);
-
-        if (cnt == 2)
-            return 0;
-
+        get_input(input, buf);
+        if (check_input(input, pswd))
+            WriteString(buf, 5, 16, "Correct!");
+        else
+            WriteString(buf, 5, 16, "Wrong!");
+        render(buf, &frame_area);
         // Remote with display
 
         if (rx_data == remote_return) // clear
@@ -185,9 +168,8 @@ int main()
 
         else if (rx_data == remote_play)
         {
-            // Prof's code
 
-            if (check_input(input, pswd) == 1)
+            if (check(passwords, answer) == 1)
             {
                 WriteString(buf, 5, 8, "                   ");
                 WriteString(buf, 5, 8, "   Correct PWD  ");
@@ -200,24 +182,7 @@ int main()
             {
                 WriteString(buf, 5, 8, "                   ");
                 WriteString(buf, 5, 8, "   Wrong PWD   ");
-                cnt = 0;
             }
-
-            /* if (check(passwords, answer) == 1)
-                 {
-                     WriteString(buf, 5, 8, "                   ");
-                     WriteString(buf, 5, 8, "   Correct PWD  ");
-                     onSMotor(1);
-                     sleep_ms(3000);
-                     offSMotor(1);
-                     sleep_ms(200);
-                 }
-                 else
-                 {
-                     WriteString(buf, 5, 8, "                   ");
-                     WriteString(buf, 5, 8, "   Wrong PWD   ");
-                 } */
-
             x_pos = 5;
             y_pos = 8;
 
@@ -315,12 +280,14 @@ int Trs_KeyV(uint8_t data, int pos, uint8_t *buf)
         WriteString(buf, 5 + (pos * 9), 8, "9");
         break;
     }
+    render(buf, &frame_area);
     return TrsData;
 }
 
 int get_input(int *input, uint8_t *buf)
 {
     PIO pio = pio0; // choose which PIO block to use (RP2040 has two: pio0 and pio1)
+    int cnt = 0;
     uint8_t rx_address, rx_data;
 
     uint rx_gpio = 5; // choose which GPIO pin is connected to the IR detector
@@ -333,7 +300,6 @@ int get_input(int *input, uint8_t *buf)
         printf("could not configure PIO\n");
         return -1;
     }
-    int cnt = 0;
 
     while (1)
     {
@@ -355,7 +321,7 @@ int get_input(int *input, uint8_t *buf)
 int check_input(int *input, int *pswd)
 {
 
-    for (int i = 0; i < 2; i++)
+    for (int i = 0; i < 4; i++)
         if (input[i] != pswd[i])
             return 0;
 
