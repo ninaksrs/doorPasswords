@@ -59,55 +59,45 @@ int Trs_KeyV(uint8_t data, int pos, uint8_t *buf)
     case remote_num0:
         TrsData = 0;
         WriteString(buf, pos_first + current_pos, 8, "0");
-        sleep_ms(1);
         break;
     case remote_num1:
         TrsData = 1;
         WriteString(buf, pos_first + current_pos, 8, "1");
-        sleep_ms(1);
         break;
     case remote_num2:
         TrsData = 2;
         WriteString(buf, pos_first + current_pos, 8, "2");
-        sleep_ms(1);
         break;
     case remote_num3:
         TrsData = 3;
         WriteString(buf, pos_first + current_pos, 8, "3");
-        sleep_ms(1);
         break;
     case remote_num4:
         TrsData = 4;
         WriteString(buf, pos_first + current_pos, 8, "4");
-        sleep_ms(1);
         break;
     case remote_num5:
         TrsData = 5;
         WriteString(buf, pos_first + current_pos, 8, "5");
-        sleep_ms(1);
         break;
     case remote_num6:
         TrsData = 6;
         WriteString(buf, pos_first + current_pos, 8, "6");
-        sleep_ms(1);
         break;
     case remote_num7:
         TrsData = 7;
         WriteString(buf, pos_first + current_pos, 8, "7");
-        sleep_ms(1);
         break;
     case remote_num8:
         TrsData = 8;
         WriteString(buf, pos_first + current_pos, 8, "8");
-        sleep_ms(1);
         break;
     case remote_num9:
         TrsData = 9;
         WriteString(buf, pos_first + current_pos, 8, "9");
-        sleep_ms(1);
         break;
     }
-    if (current_pos >= 120)
+    if (pos > 4)
     {
         pos_first = 0;
         current_pos = 5;
@@ -132,7 +122,11 @@ void clear_input(int input[])
     {
         input[i] = -1;
     }
+    sleep_ms(100);
 }
+
+int get_count(int cnt, uint8_t rx_data);
+
 int main()
 {
 
@@ -172,8 +166,11 @@ int main()
     uint x_pos = 5, y_pos = 8;
 
     int pswd[4] = {1, 2, 3, 4};
-    int input[4] = {0};
+    // int input[4] = {0};
+    int input[4] = {1, 2, 3, 4};
     int cnt = 0;
+
+    sleep_ms(100);
 
     while (true)
     {
@@ -185,49 +182,28 @@ int main()
             uint32_t rx_frame = pio_sm_get(pio, rx_sm);
             nec_decode_frame(rx_frame, &rx_address, &rx_data);
 
-            if (rx_data != remote_power)
-                cnt++;
-            else if (rx_data != remote_menu)
-                cnt++;
-            else if (rx_data != remote_test)
-                cnt++;
-            else if (rx_data != remote_plus)
-                cnt++;
-            else if (rx_data != remote_minus)
-                cnt++;
-            else if (rx_data != remote_return)
-                cnt++;
-            else if (rx_data != remote_backward)
-                cnt++;
-            else if (rx_data != remote_forward)
-                cnt++;
-            else if (rx_data != remote_c)
-                cnt++;
-            else if (rx_data != remote_play)
-                cnt++;
-
-            if (cnt >= 1 && cnt <= 4)
+            int setkey[] = {
+                remote_num0,
+                remote_num1,
+                remote_num2,
+                remote_num3,
+                remote_num4,
+                remote_num5,
+                remote_num6,
+                remote_num7,
+                remote_num8,
+                remote_num9,
+            };
+            for (int i = 0; i < 10; i++)
             {
-                input[cnt - 1] = Trs_KeyV(rx_data, cnt, buf);
-                sleep_ms(1);
-                if (cnt == 4)
+                if (rx_data == setkey[i])
                 {
-                    cnt = 0;
-                    sleep_ms(1);
+                    cnt++;
+                    input[cnt - 1] = Trs_KeyV(rx_data, cnt, buf);
                 }
-                if (rx_data == remote_play)
+                else if (cnt > 4)
                 {
-                    if (check_input(input, pswd) == 1)
-                    {
-                        WriteString(buf, 5, 8, "                   ");
-                        WriteString(buf, 5, 8, "  Correct   ");
-                    }
-                    else
-                    {
-                        WriteString(buf, 5, 8, "                   ");
-                        WriteString(buf, 5, 8, "  Wrong    ");
-                    }
-
+                    WriteString(buf, 5, 8, "count overflow");
                     clear_input(input);
                     rx_data = 0;
                     cnt = 0;
@@ -235,17 +211,27 @@ int main()
                     y_pos = 8;
                 }
             }
-            else
-            {
-                WriteString(buf, 5, 8, "something wrong");
-                clear_input(input);
-                cnt = 0;
-                x_pos = 5;
-                y_pos = 8;
-                sleep_ms(1);
-            }
         }
 
+        if (rx_data == remote_play)
+        {
+            if (check_input(input, pswd) == 1)
+            {
+                WriteString(buf, 5, 8, "                   ");
+                WriteString(buf, 5, 8, "  Correct   ");
+            }
+            else
+            {
+                WriteString(buf, 5, 8, "                   ");
+                WriteString(buf, 5, 8, "  Wrong    ");
+            }
+
+            clear_input(input);
+            rx_data = 0;
+            cnt = 0;
+            x_pos = 5;
+            y_pos = 8;
+        }
         if (rx_data == remote_return) // clear
         {
             WriteString(buf, 0, 0, "                   ");
@@ -267,4 +253,29 @@ int main()
         }
     }
     return 0;
+}
+
+int get_count(int cnt, uint8_t rx_data)
+{
+
+    int setkey[] = {
+        remote_num0,
+        remote_num1,
+        remote_num2,
+        remote_num3,
+        remote_num4,
+        remote_num5,
+        remote_num6,
+        remote_num7,
+        remote_num8,
+        remote_num9,
+    };
+    for (int i = 0; i < 10; i++)
+    {
+        if (rx_data == setkey[i] && cnt < 4)
+        {
+            cnt++;
+        }
+    }
+    return cnt;
 }
