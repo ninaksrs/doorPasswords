@@ -28,16 +28,21 @@
 #include <string.h>
 #include <stdlib.h>
 #include <ctype.h>
+
 #include "pico/stdlib.h"
 #include "pico/binary_info.h"
 #include "hardware/i2c.h"
-// #include "raspberry26x32.h"
+#include "hardware/pio.h"
 #include "ssd1306_font.h"
+#include "nec_receive.h"
+
+#include "stepper_motor.h"
 #include "OLED.h"
 
-#include "nec_receive.h"
-#include "hardware/pio.h"
-#include "hardware/clocks.h" // for clock_get_hz()
+#include "hardware/pwm.h"
+#include "hardware/gpio.h"
+#include "hardware/clocks.h"
+#include "hardware/adc.h"
 
 struct render_area frame_area = {
     start_col : 0,
@@ -46,11 +51,161 @@ struct render_area frame_area = {
     end_page : SSD1306_NUM_PAGES - 1
 };
 
+int Trs_KeyV(uint8_t data, int pos, uint8_t *buf);
+int check_input(int input[], int pswd[]);
+void clear_input(int input[]);
+
+void init_HW()
+{
+    // I2C is "open drain", pull ups to keep signal high when no data is being
+    // sent
+    i2c_init(i2c_default, SSD1306_I2C_CLK * 1000);
+    gpio_set_function(PICO_I2C_SDA_PIN, GPIO_FUNC_I2C);
+    gpio_set_function(PICO_I2C_SCL_PIN, GPIO_FUNC_I2C);
+    gpio_pull_up(PICO_I2C_SDA_PIN);
+    gpio_pull_up(PICO_I2C_SCL_PIN);
+
+    // run through the complete initialization process
+    SSD1306_init();
+}
+
+int main()
+{
+    // OLED SSD1306
+    init_HW();
+
+    // Initialize render area for entire frame (SSD1306_WIDTH pixels by SSD1306_NUM_PAGES pages)
+    calc_render_area_buflen(&frame_area);
+
+    // zero the entire display
+    uint8_t buf[SSD1306_BUF_LEN];
+    memset(buf, 0, SSD1306_BUF_LEN);
+    render(buf, &frame_area);
+
+    // IR
+    PIO pio = pio0; // choose which PIO block to use (RP2040 has two: pio0 and pio1)
+    uint8_t rx_address, rx_data;
+
+    uint rx_gpio = 5; // choose which GPIO pin is connected to the IR detector
+
+    // configure and enable the state machines
+    int rx_sm = nec_rx_init(pio, rx_gpio); // uses one state machine and 9 instructions
+    if (rx_sm == -1)
+    {
+        printf("could not configure PIO\n");
+        return -1;
+    }
+
+    // Init LED pin Motor
+    init_port(In1_pin, GPIO_OUT);
+    init_port(In2_pin, GPIO_OUT);
+    init_port(In3_pin, GPIO_OUT);
+    init_port(In4_pin, GPIO_OUT);
+    sleep_ms(100);
+
+    // Variable Declarations
+#define pswd_rang 4
+    uint x_pos = 5, y_pos = 8;
+    int pswd[pswd_rang] = {1, 2, 3, 4};
+    int input[pswd_rang] = {0};
+    int cnt = 0;
+    sleep_ms(100);
+
+    while (true)
+    {
+        // IR receive
+        while (!pio_sm_is_rx_fifo_empty(pio, rx_sm))
+        {
+            uint32_t rx_frame = pio_sm_get(pio, rx_sm);
+            nec_decode_frame(rx_frame, &rx_address, &rx_data);
+
+            int setkey[] = {
+                remote_num0,
+                remote_num1,
+                remote_num2,
+                remote_num3,
+                remote_num4,
+                remote_num5,
+                remote_num6,
+                remote_num7,
+                remote_num8,
+                remote_num9,
+            };
+            for (int i = 0; i < 10; i++)
+            {
+                if (rx_data == setkey[i])
+                {
+                    cnt++;
+                    input[cnt - 1] = Trs_KeyV(rx_data, cnt, buf);
+                }
+                else if (cnt > pswd_rang)
+                {
+                    WriteString(buf, 5, 8, "count overflow");
+                    clear_input(input);
+                    rx_data = 0;
+                    cnt = 0;
+                    x_pos = 5;
+                    y_pos = 8;
+                }
+            }
+        }
+
+        // Show Display
+        render(buf, &frame_area);
+        WriteString(buf, 5, 0, "  Smart Lazy");
+
+        // Remote with display
+        if (rx_data == remote_play)
+        {
+            if (check_input(input, pswd) == 1)
+            {
+                WriteString(buf, 5, 8, "                   ");
+                WriteString(buf, 5, 8, "    Welcome   "); // Play
+                onSMotor(1);
+                sleep_ms(3000);
+                offSMotor(1);
+                sleep_ms(200);
+            }
+            else
+            {
+                WriteString(buf, 5, 8, "                   ");
+                WriteString(buf, 5, 8, "   Wrong PWD   ");
+            }
+
+            clear_input(input);
+            rx_data = 0;
+            cnt = 0;
+            x_pos = 5;
+            y_pos = 8;
+        }
+        if (rx_data == remote_return) // clear all
+        {
+            WriteString(buf, 0, 0, "                   ");
+            WriteString(buf, 5, 8, "                   ");
+            WriteString(buf, 5, 16, "                   ");
+
+            clear_input(input);
+            rx_data = 0;
+            cnt = 0;
+            x_pos = 5;
+            y_pos = 8;
+        }
+
+        rx_data = 0;
+        if (x_pos >= 120)
+        {
+            x_pos = 5;
+            y_pos += 8;
+        }
+    }
+    return 0;
+}
+
 int Trs_KeyV(uint8_t data, int pos, uint8_t *buf)
 {
     int TrsData = -1;
-    int pos_first = 0;
-    int x_bit = 8;
+    int x_bit = 20;
+    int pos_first = 5 + 8;
     int current_pos = pos * x_bit;
 
     WriteString(buf, 5, 8, "                   ");
@@ -109,173 +264,19 @@ int Trs_KeyV(uint8_t data, int pos, uint8_t *buf)
 int check_input(int input[], int pswd[])
 {
     bool chk;
-    for (int i = 0; i < 4; i++)
+    for (int i = 0; i < pswd_rang; i++)
         if (input[i] != pswd[i])
             chk = 0;
         else
             chk = 1;
     return chk;
 }
+
 void clear_input(int input[])
 {
-    for (int i = 0; i < 4; i++)
+    for (int i = 0; i < pswd_rang; i++)
     {
-        input[i] = -1;
+        input[i] = 0;
     }
     sleep_ms(100);
-}
-
-int get_count(int cnt, uint8_t rx_data);
-
-int main()
-{
-
-    // I2C is "open drain", pull ups to keep signal high when no data is being
-    // sent
-    i2c_init(i2c_default, SSD1306_I2C_CLK * 1000);
-    gpio_set_function(PICO_I2C_SDA_PIN, GPIO_FUNC_I2C);
-    gpio_set_function(PICO_I2C_SCL_PIN, GPIO_FUNC_I2C);
-    gpio_pull_up(PICO_I2C_SDA_PIN);
-    gpio_pull_up(PICO_I2C_SCL_PIN);
-
-    // run through the complete initialization process
-    SSD1306_init();
-
-    // Initialize render area for entire frame (SSD1306_WIDTH pixels by SSD1306_NUM_PAGES pages)
-
-    calc_render_area_buflen(&frame_area);
-
-    // zero the entire display
-    uint8_t buf[SSD1306_BUF_LEN];
-    memset(buf, 0, SSD1306_BUF_LEN);
-    render(buf, &frame_area);
-
-    // IR
-    PIO pio = pio0; // choose which PIO block to use (RP2040 has two: pio0 and pio1)
-    uint8_t rx_address, rx_data;
-
-    uint rx_gpio = 5; // choose which GPIO pin is connected to the IR detector
-
-    // configure and enable the state machines
-    int rx_sm = nec_rx_init(pio, rx_gpio); // uses one state machine and 9 instructions
-    if (rx_sm == -1)
-    {
-        printf("could not configure PIO\n");
-        return -1;
-    }
-    uint x_pos = 5, y_pos = 8;
-
-    int pswd[4] = {1, 2, 3, 4};
-    // int input[4] = {0};
-    int input[4] = {1, 2, 3, 4};
-    int cnt = 0;
-
-    sleep_ms(100);
-
-    while (true)
-    {
-        render(buf, &frame_area);
-        WriteString(buf, 5, 0, "TEST");
-
-        while (!pio_sm_is_rx_fifo_empty(pio, rx_sm))
-        {
-            uint32_t rx_frame = pio_sm_get(pio, rx_sm);
-            nec_decode_frame(rx_frame, &rx_address, &rx_data);
-
-            int setkey[] = {
-                remote_num0,
-                remote_num1,
-                remote_num2,
-                remote_num3,
-                remote_num4,
-                remote_num5,
-                remote_num6,
-                remote_num7,
-                remote_num8,
-                remote_num9,
-            };
-            for (int i = 0; i < 10; i++)
-            {
-                if (rx_data == setkey[i])
-                {
-                    cnt++;
-                    input[cnt - 1] = Trs_KeyV(rx_data, cnt, buf);
-                }
-                else if (cnt > 4)
-                {
-                    WriteString(buf, 5, 8, "count overflow");
-                    clear_input(input);
-                    rx_data = 0;
-                    cnt = 0;
-                    x_pos = 5;
-                    y_pos = 8;
-                }
-            }
-        }
-
-        if (rx_data == remote_play)
-        {
-            if (check_input(input, pswd) == 1)
-            {
-                WriteString(buf, 5, 8, "                   ");
-                WriteString(buf, 5, 8, "  Correct   ");
-            }
-            else
-            {
-                WriteString(buf, 5, 8, "                   ");
-                WriteString(buf, 5, 8, "  Wrong    ");
-            }
-
-            clear_input(input);
-            rx_data = 0;
-            cnt = 0;
-            x_pos = 5;
-            y_pos = 8;
-        }
-        if (rx_data == remote_return) // clear
-        {
-            WriteString(buf, 0, 0, "                   ");
-            WriteString(buf, 5, 8, "                   ");
-            WriteString(buf, 5, 16, "                   ");
-
-            clear_input(input);
-            rx_data = 0;
-            cnt = 0;
-            x_pos = 5;
-            y_pos = 8;
-        }
-
-        rx_data = 0;
-        if (x_pos >= 120)
-        {
-            x_pos = 5;
-            y_pos += 8;
-        }
-    }
-    return 0;
-}
-
-int get_count(int cnt, uint8_t rx_data)
-{
-
-    int setkey[] = {
-        remote_num0,
-        remote_num1,
-        remote_num2,
-        remote_num3,
-        remote_num4,
-        remote_num5,
-        remote_num6,
-        remote_num7,
-        remote_num8,
-        remote_num9,
-    };
-    for (int i = 0; i < 10; i++)
-    {
-        if (rx_data == setkey[i] && cnt < 4)
-        {
-            cnt++;
-        }
-    }
-    return cnt;
 }
