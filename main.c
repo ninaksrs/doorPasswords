@@ -3,6 +3,7 @@
  *
  * SPDX-License-Identifier: BSD-3-Clause
  */
+
 #define remote_num0 0x16
 #define remote_num1 0x0c
 #define remote_num2 0x18
@@ -160,7 +161,7 @@ int main()
             if (check_input(input, pswd) == 1)
             {
                 WriteString(buf, 5, 8, "                   ");
-                WriteString(buf, 5, 8, "    Welcome   "); // Play
+                WriteString(buf, 5, 8, "    Welcome   ");
                 onSMotor(1);
                 sleep_ms(3000);
                 offSMotor(1);
