@@ -73,20 +73,13 @@ CMakeFiles/main.dir/main.c.obj: /Users/Nina/pico/doorPasswords/main.c \
  /Users/Nina/pico/pico-sdk/src/rp2_common/hardware_i2c/include/hardware/i2c.h \
  /Users/Nina/pico/pico-sdk/src/rp2040/hardware_structs/include/hardware/structs/i2c.h \
  /Users/Nina/pico/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/i2c.h \
+ /Users/Nina/pico/doorPasswords/ssd1306_font.h \
+ /Users/Nina/pico/doorPasswords/OLED.h \
+ /Users/Nina/pico/doorPasswords/nec_receive.h \
  /Users/Nina/pico/pico-sdk/src/rp2_common/hardware_pio/include/hardware/pio.h \
  /Users/Nina/pico/pico-sdk/src/rp2040/hardware_structs/include/hardware/structs/pio.h \
  /Users/Nina/pico/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/pio.h \
  /Users/Nina/pico/pico-sdk/src/rp2_common/hardware_pio/include/hardware/pio_instructions.h \
- /Users/Nina/pico/doorPasswords/ssd1306_font.h \
- /Users/Nina/pico/doorPasswords/nec_receive.h \
- /Users/Nina/pico/doorPasswords/stepper_motor.h \
- /Users/Nina/pico/doorPasswords/OLED.h \
- /Users/Nina/pico/pico-sdk/src/rp2_common/hardware_pwm/include/hardware/pwm.h \
- /Users/Nina/pico/pico-sdk/src/rp2040/hardware_structs/include/hardware/structs/pwm.h \
- /Users/Nina/pico/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/pwm.h \
  /Users/Nina/pico/pico-sdk/src/rp2_common/hardware_clocks/include/hardware/clocks.h \
  /Users/Nina/pico/pico-sdk/src/rp2040/hardware_structs/include/hardware/structs/clocks.h \
- /Users/Nina/pico/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/clocks.h \
- /Users/Nina/pico/pico-sdk/src/rp2_common/hardware_adc/include/hardware/adc.h \
- /Users/Nina/pico/pico-sdk/src/rp2040/hardware_structs/include/hardware/structs/adc.h \
- /Users/Nina/pico/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/adc.h
+ /Users/Nina/pico/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/clocks.h
